@@ -1,0 +1,149 @@
+.signup {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   height: 580px;
+   border-radius: 0.25rem;
+   overflow: hidden;
+
+   h4 {
+      font-size: 1.9rem;
+      text-transform: capitalize;
+      line-height: 1.25;
+   }
+
+   input:not([type="checkbox"]) {
+      width: 100%;
+      padding: 0.6rem 0.5rem;
+      background: #eee;
+      outline: none;
+      border-radius: 0.2rem;
+      border: 1px solid #ddd;
+      margin-bottom: 1rem;
+
+      &::placeholder {
+         font-size: 0.75rem;
+      }
+   }
+
+   button {
+      border: 1px solid #ff6600;
+      background-color: #ff6600;
+      color: #fff;
+      border-radius: 2rem;
+      padding: 0.75rem 2.8125rem;
+      margin-top: 1.25rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      transition: all 0.3s ease;
+
+      cursor: pointer;
+
+      &:hover {
+         background-color: #fff;
+         color: #ff6600;
+         border: 1px solid #ff6600;
+      }
+   }
+}
+
+.signupLeft {
+   background-color: #fff;
+   height: 100%;
+   padding: 2rem 1.5rem 1rem;
+   border-radius: inherit;
+
+   @media (min-width: 350px) {
+      min-width: 300px;
+   }
+
+   @media (min-width: 640px) {
+      border-radius: unset;
+      flex: 1 1 50%;
+      padding: 2rem 2rem 1rem;
+   }
+
+   h4 {
+      margin-bottom: 1rem;
+      color: #262626;
+   }
+
+   .checkboxTerms {
+      display: flex;
+      align-items: center;
+
+      input {
+         margin-right: 0.5rem;
+         outline-offset: -1px;
+         outline-color: #ff6600;
+      }
+
+      label {
+         font-size: 0.8125rem;
+         cursor: pointer;
+      }
+   }
+
+   .errorMess {
+      display: block;
+      width: 100%;
+      font-size: 0.75rem;
+      color: red;
+      text-align: left;
+      position: relative;
+      top: -10px;
+   }
+
+   .errorMess.checkboxError {
+      top: 0;
+   }
+}
+
+.signupRight {
+   display: none;
+   flex: 1 1 50%;
+   height: 100%;
+   padding: 65px 30px;
+   background-color: #ff6600;
+   border-radius: inherit;
+
+   @media (min-width: 640px) {
+      display: block;
+      border-radius: unset;
+   }
+
+   & > div {
+      position: relative;
+      top: 30%;
+      transform: translateY(-30%);
+   }
+
+   h4 {
+      color: #fff;
+      margin-bottom: 0.2rem;
+   }
+
+   .text {
+      width: 90%;
+      margin: 0 auto;
+      font-size: 0.75rem;
+      color: #fff;
+   }
+
+   button {
+      background-color: #fff;
+      border: 1px solid;
+      border-color: #fff;
+      color: #ff6600;
+
+      &:hover {
+         color: #fff;
+         border-color: #fff;
+         background-color: #ff6600;
+      }
+   }
+}

@@ -1,0 +1,16 @@
+.authentication {
+   background-image: url("https://res.cloudinary.com/dzzfmvtiu/image/upload/v1670044335/movie-ticketbooking/background-auth_cwozrv.jpg");
+   background-position: center;
+   background-size: cover;
+   height: 100vh;
+
+   .container {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      position: relative;
+      top: 30%;
+      transform: translateY(-30%);
+   }
+}

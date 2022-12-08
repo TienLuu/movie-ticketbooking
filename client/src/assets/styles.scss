@@ -1,0 +1,304 @@
+/*
+=============================================
+                    GLOBAL
+=============================================
+*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
+:root {
+   --clr-bg: #fff;
+   --clr-white: #fff;
+
+   --clr-seatSelected: rgb(239, 191, 62);
+   --clr-seatSelect: rgb(65, 195, 144);
+   --clr-border: rgb(198, 198, 201);
+   --clr-bg1: rgb(225, 225, 225);
+}
+*,
+::before,
+::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+html {
+   line-height: 1.5;
+}
+
+body {
+   font-family: "Nunito", sans-serif;
+   line-height: inherit;
+
+   &::-webkit-scrollbar {
+      width: 6px;
+      height: 50%;
+
+      @media (min-width: 1024px) {
+         width: 9px;
+      }
+   }
+
+   &::-webkit-scrollbar-track {
+      background: #f0f0f0;
+   }
+
+   /* Handle */
+   &::-webkit-scrollbar-thumb {
+      background: #c9c9c9;
+      border-radius: 0.125rem;
+   }
+
+   /* Handle on hover */
+   &::-webkit-scrollbar-thumb:hover {
+      background: #ff6600;
+   }
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+ul {
+   list-style: none;
+}
+
+.swiper.swiper-horizontal {
+   padding-left: 1.25rem;
+   padding-right: 1.25rem;
+   padding-bottom: 0.1rem;
+}
+
+.swiper .swiper-slide {
+   height: auto;
+}
+
+.swiper img {
+   width: 100%;
+   height: 100%;
+}
+
+.swiper .swiper-pagination-bullet {
+   width: 10px;
+   height: 10px;
+
+   background-color: #fff;
+   opacity: 1;
+}
+
+.swiper .swiper-pagination-bullet-active {
+   background-color: #ff6600;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+   bottom: 25px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper
+   .swiper-pagination-horizontal.swiper-pagination-bullets
+   .swiper-pagination-bullet {
+   margin: 0 5px;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+   color: #fff3e0;
+}
+
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+   font-size: 30px;
+}
+
+/*
+=============================================
+            CONFIG SWIPER
+=============================================
+*/
+// Carousel
+.swiper.carousel-slide .swiper-slide {
+   height: 40vh;
+
+   @media (min-width: 576px) {
+      height: 50vh;
+   }
+
+   @media (min-width: 992px) {
+      height: 78vh;
+   }
+}
+
+.swiper .swiper-pagination-bullets {
+   display: inline-block;
+}
+
+.carousel-slide.swiper.swiper-horizontal {
+   padding-left: 0;
+   padding-right: 0;
+   padding-bottom: 0;
+
+   & > .swiper-pagination-bullets,
+   .swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+      @media (min-width: 992px) {
+         bottom: 30px;
+      }
+
+      @media (min-width: 1200px) {
+         bottom: 40px;
+      }
+
+      @media (min-width: 1700px) {
+         bottom: 80px;
+      }
+   }
+
+   .swiper-pagination-bullets {
+      @media screen and (min-width: 768px) {
+         display: inline-block;
+      }
+   }
+}
+
+.swiper.carousel-slide .swiper-button-prev {
+   left: 15px;
+
+   @media (min-width: 576px) {
+      left: 30px;
+   }
+}
+
+.swiper.carousel-slide .swiper-button-next {
+   right: 15px;
+
+   @media (min-width: 576px) {
+      left: 30px;
+   }
+}
+
+// Film List
+.comingSoon__film.swiper.swiper-horizontal,
+.nowShowing__film.swiper.swiper-horizontal {
+   padding-left: 0;
+   padding-right: 0;
+   padding-bottom: 0;
+}
+
+.nowShowing__prev,
+.nowShowing__next,
+.comingSoon__prev,
+.comingSoon__next {
+   &.swiper-button-disabled {
+      opacity: 0.25;
+      cursor: default;
+   }
+}
+
+// Ticket Booking
+.movieClusters-slide.swiper .movieClusters-item {
+   width: 4rem !important;
+}
+
+.movieClusters-slide .swiper-button-next.swiper-button-disabled,
+.movieClusters-slide .swiper-button-prev.swiper-button-disabled {
+   opacity: 0;
+}
+
+.movieClusters-slide.swiper .swiper-button-next {
+   background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 1) 50%,
+      #fff 100%
+   );
+
+   height: 100%;
+   width: 3rem;
+   top: 1.2rem;
+   right: 0;
+   color: rgb(115, 115, 115);
+}
+
+.movieClusters-slide.swiper .swiper-button-prev {
+   background: linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 1) 50%,
+      #fff 100%
+   );
+
+   height: 100%;
+   width: 3rem;
+   top: 1.2rem;
+   left: 0;
+   color: rgb(115, 115, 115);
+}
+
+.movieClusters-slide.swiper .swiper-button-prev::after,
+.movieClusters-slide.swiper .swiper-button-next::after {
+   font-size: 1.25rem;
+   color: rgba(115, 115, 115, 0.6);
+}
+
+.movieSchedule-slide.swiper .movieSchedule-item {
+   width: 4.5rem !important;
+}
+
+.movieSchedule-slide .swiper-button-next.swiper-button-disabled,
+.movieSchedule-slide .swiper-button-prev.swiper-button-disabled {
+   opacity: 0;
+}
+
+.movieSchedule-slide.swiper .swiper-button-next {
+   background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 1) 50%,
+      #fff 100%
+   );
+
+   height: 120%;
+   width: 3rem;
+   top: 1.2rem;
+   right: 0;
+   color: rgb(115, 115, 115);
+}
+
+.movieSchedule-slide.swiper .swiper-button-prev {
+   background: linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 1) 50%,
+      #fff 100%
+   );
+
+   height: 120%;
+   width: 3rem;
+   top: 1.2rem;
+   left: 0;
+   color: rgb(115, 115, 115);
+}
+
+.movieSchedule-slide.swiper .swiper-button-prev::after,
+.movieSchedule-slide.swiper .swiper-button-next::after {
+   font-size: 1.4rem;
+   color: rgba(255, 102, 0, 0.6);
+}
+
+/*
+=============================================
+               RESPONSIVE
+=============================================
+*/
+
+@media screen and (min-width: 576px) {
+   .MuiContainer-root,
+   .MuiToolbar-root {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+   }
+}

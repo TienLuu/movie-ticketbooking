@@ -1,0 +1,162 @@
+.seatChoice {
+   flex-basis: 65%;
+   padding-top: 2rem;
+
+   @media (min-width: 992px) {
+      flex-basis: 70%;
+   }
+
+   h1 {
+      font-size: 1.6rem;
+      color: #ff6600;
+      margin-bottom: 2rem;
+   }
+}
+
+.typeChose {
+   margin-bottom: 1rem;
+   display: grid;
+   grid-template-columns: repeat(2, minmax(0, 1fr));
+   justify-content: center;
+
+   @media (min-width: 550px) {
+      grid-template-columns: repeat(4, minmax(0, 200px));
+   }
+
+   span {
+      margin: 0 5px;
+      font-size: 1rem;
+   }
+
+   .seatSelected::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+
+      background: var(--clr-seatSelect);
+      margin-right: 9px;
+   }
+
+   .seatReserved::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+
+      background: var(--clr-seatSelected);
+      margin-right: 9px;
+   }
+
+   .seatNormal::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+
+      background: rgb(0, 125, 0);
+      margin-right: 9px;
+   }
+
+   .seatVip::before {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+
+      background: var(--clr-seatSelected);
+      margin-right: 9px;
+   }
+}
+
+.seatList {
+   position: relative;
+   display: flex;
+   justify-content: center;
+
+   min-height: 350px;
+   width: 100%;
+   z-index: 10;
+   top: -6rem;
+
+   border: solid 5px transparent;
+   border-radius: 50%/60px 60px 0 0;
+   background-color: #fff;
+
+   .wrapper {
+      position: relative;
+      top: -3rem;
+
+      z-index: 99;
+   }
+
+   .seatLine {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      @media (min-width: 450px) {
+         gap: 0.3rem;
+         margin-bottom: 0.5rem;
+      }
+
+      @media (min-width: 1400px) {
+         gap: 0.5rem;
+         margin-bottom: 0.5rem;
+      }
+
+      .seatLineName {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+   }
+}
+
+.screen {
+   border: solid 5px transparent;
+   border-color: gray transparent transparent transparent;
+   border-radius: 50%/20px 20px 0 0;
+   min-height: 180px;
+   overflow: hidden;
+   position: relative;
+
+   @media (min-width: 768px) {
+      min-height: 200px;
+   }
+
+   @media (min-width: 1400px) {
+      max-width: 80%;
+      margin: 0 auto;
+   }
+}
+
+.screenLight {
+   position: absolute;
+   left: 0;
+   top: 0;
+   inset: 0;
+   border-radius: inherit;
+
+   background: radial-gradient(
+      at 50% 0,
+      rgba(31, 73, 125, 0.9),
+      transparent 100%
+   );
+}
+
+.screenLight::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+
+   border: 10px solid red;
+   border-top: none;
+   border-left: 10px solid #fff;
+   border-right: 10px solid #fff;
+   border-bottom: 300px solid transparent;
+}

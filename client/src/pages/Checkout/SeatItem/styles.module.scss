@@ -1,0 +1,59 @@
+.colNumber {
+   width: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.seat {
+   position: relative;
+   display: inline-block;
+   width: 1rem;
+   height: 1rem;
+   border-radius: 3px;
+   background: var(--clr-bg1);
+   cursor: pointer;
+   font-size: 0.6rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   @media (min-width: 370px) {
+      width: 1.2rem;
+      height: 1.2rem;
+   }
+
+   @media (min-width: 500px) {
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 6px;
+   }
+
+   @media (min-width: 600px) {
+      width: 2rem;
+      height: 2rem;
+   }
+
+   @media (min-width: 768px) {
+      width: 2.1875rem;
+      height: 1.6875rem;
+      font-size: 0.65rem;
+   }
+}
+
+.seat.seatNormal {
+   background-color: rgb(0, 125, 0);
+}
+
+.seat.seatVip {
+   background-color: var(--clr-seatSelected);
+}
+
+.seat.active {
+   background: var(--clr-seatSelect);
+}
+
+.seat.selected {
+   background: #ff6600;
+   cursor: default;
+}

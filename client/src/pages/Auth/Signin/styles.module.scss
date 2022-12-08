@@ -1,0 +1,158 @@
+.signin {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 0.25rem;
+   height: 350px;
+   overflow: hidden;
+   text-align: center;
+
+   h4 {
+      font-size: 1.9rem;
+      text-transform: capitalize;
+      line-height: 1.25;
+   }
+
+   input {
+      width: 100%;
+      padding: 0.6rem 0.5rem;
+      background: #eee;
+      outline: none;
+      border-radius: 0.2rem;
+      border: 1px solid #ddd;
+      margin-bottom: 1rem;
+
+      &::placeholder {
+         font-size: 0.75rem;
+      }
+   }
+
+   input[type="text"],
+   input[type="password"],
+   textarea,
+   select {
+      &:focus {
+         font-size: 0.75rem;
+      }
+   }
+
+   button {
+      border: 1px solid #ff6600;
+      background-color: #ff6600;
+      color: #fff;
+      border-radius: 2rem;
+      padding: 0.75rem 2.8125rem;
+      margin-top: 0.75rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      transition: all 0.3s ease;
+
+      cursor: pointer;
+
+      &:hover {
+         background-color: #fff;
+         color: #ff6600;
+         border: 1px solid #ff6600;
+      }
+   }
+}
+
+.signinLeft {
+   background-color: #fff;
+   height: 100%;
+   padding: 2rem 1.5rem 1rem;
+   border-radius: inherit;
+
+   @media (min-width: 350px) {
+      min-width: 300px;
+   }
+
+   @media (min-width: 640px) {
+      border-radius: unset;
+      flex: 1 1 50%;
+      padding: 2rem 2rem 1rem;
+   }
+
+   h4 {
+      margin-bottom: 1rem;
+      color: #262626;
+   }
+
+   .lookingFor {
+      font-size: 0.75rem;
+
+      span {
+         display: block;
+         color: rgb(19 167 241);
+         font-weight: 600;
+         cursor: pointer;
+
+         &:hover,
+         &:focus {
+            color: #ff6600;
+         }
+
+         @media (min-width: 640px) {
+            display: none;
+         }
+      }
+   }
+
+   .errorMess {
+      display: block;
+      width: 100%;
+      font-size: 0.75rem;
+      color: red;
+      text-align: left;
+      position: relative;
+      top: -10px;
+   }
+}
+
+.signinRight {
+   background-color: #ff6600;
+   padding: 65px 30px;
+   flex: 1 1 50%;
+   height: 100%;
+   border-radius: inherit;
+   display: none;
+
+   @media (min-width: 640px) {
+      display: block;
+      border-radius: unset;
+   }
+
+   & > div {
+      position: relative;
+      top: 30%;
+      transform: translateY(-30%);
+   }
+
+   h4 {
+      color: #fff;
+      margin-bottom: 0.2rem;
+   }
+
+   button {
+      background-color: #fff;
+      color: #ff6600;
+      border: 1px solid;
+      border-color: #fff;
+
+      &:hover {
+         color: #fff;
+         border-color: #fff;
+         background-color: #ff6600;
+      }
+   }
+
+   .text {
+      width: 90%;
+      margin: 0 auto;
+      font-size: 0.75rem;
+      color: #fff;
+   }
+}

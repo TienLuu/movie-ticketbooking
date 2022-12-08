@@ -1,0 +1,23 @@
+.checkout {
+   background-color: #fff;
+   color: #000;
+   position: relative;
+   min-height: 90vh;
+   height: auto;
+
+   @media (min-width: 960px) {
+      height: 90vh;
+   }
+
+   .main {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      @media (min-width: 960px) {
+         flex-direction: row;
+      }
+   }
+}

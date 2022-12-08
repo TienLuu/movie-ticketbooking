@@ -1,0 +1,42 @@
+.movieScheduleItem {
+   width: 4rem;
+   border-radius: 0.25rem;
+   border: 1px solid rgb(212, 212, 212);
+   background-color: #fff;
+   text-align: center;
+
+   cursor: pointer;
+   overflow: hidden;
+
+   &.active {
+      border-color: #ff6600;
+
+      .header {
+         background-color: #ff6600;
+         color: #fff;
+      }
+
+      .footer {
+         color: #ff6600;
+      }
+   }
+}
+
+.header {
+   margin: 0 auto;
+   padding: 0.25rem 0;
+   background-color: rgb(245, 245, 245);
+   font-size: 1.125rem;
+   line-height: 1.75rem;
+   font-weight: 600;
+}
+
+.footer {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 1.5rem;
+   font-size: 0.75rem;
+   line-height: 1rem;
+   color: rgb(163, 163, 163);
+}
