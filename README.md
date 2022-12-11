@@ -6,15 +6,9 @@
 ### 🎈**Link**
 
 -  Link Deploy
-   -  Web Client : https://tienluu.github.io/BC32_CapstoneReact/
-   -  Web Admin : https://vxphat.github.io/ReactMovie/
--  Link Youtube : https://www.youtube.com/watch?v=i5GLZUoQLtc
--  Link workflow: https://docs.google.com/spreadsheets/d/1AivRQUlwvf9QlYmqixkCvkoZVC4twyZEA-2aKiyzFXE/edit#gid=0
--  Link source:
-   -  Client: https://github.com/TienLuu/BC32_CapstoneReact
-   -  Admin: https://github.com/vxphat/ReactMovie
+   -  Web Client : https://dashing-buttercream-70c639.netlify.app/
+   -  Web Admin : https://heroic-speculoos-42a84b.netlify.app
 
 ### 👦**Account(admin) for testing**
-
 -  Username: tienluuadmin
 -  Password: tienluuadmin@1301
