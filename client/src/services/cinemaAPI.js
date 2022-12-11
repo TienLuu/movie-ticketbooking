@@ -1,24 +1,12 @@
 import fetcher from "./fetcher";
 
 const cinemaAPI = {
-   getCinemaClusters: async () => {
-      return await fetcher.get("QuanLyRap/LayThongTinHeThongRap");
+   getCinemaClusters: () => {
+      return fetcher.get("QuanLyRap/LayThongTinHeThongRap");
    },
 
-   getMovieTheaterAddressList: async () => {
-      return await fetcher.get("QuanLyRap/LayThongTinCumRapTheoHeThong");
-   },
-
-   getMovieTheaterAddress: async (cinemaBranchId) => {
-      return await fetcher.get("QuanLyRap/LayThongTinCumRapTheoHeThong", {
-         params: {
-            maHeThongRap: cinemaBranchId,
-         },
-      });
-   },
-
-   getCinemaShowtimes: async (cinemaClusterId) => {
-      return await fetcher.get("QuanLyRap/LayThongTinLichChieuHeThongRap", {
+   getCinemaShowtimes: (cinemaClusterId) => {
+      return fetcher.get("QuanLyRap/LayThongTinLichChieuHeThongRap", {
          params: {
             maHeThongRap: cinemaClusterId,
             maNhom: "GP09",
@@ -26,8 +14,8 @@ const cinemaAPI = {
       });
    },
 
-   getMoviesShowtimes: async (movieId) => {
-      return await fetcher.get("QuanLyRap/LayThongTinLichChieuPhim", {
+   getMoviesShowtimes: (movieId) => {
+      return fetcher.get("QuanLyRap/LayThongTinLichChieuPhim", {
          params: {
             MaPhim: movieId,
          },

@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
 import Container from "@mui/material/Container";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import PinterestIcon from "@mui/icons-material/Pinterest";
@@ -12,13 +12,15 @@ import GoogleIcon from "@mui/icons-material/Google";
 // Import Module Css
 import styles from "./styles.module.scss";
 
+const cn = classnames.bind(styles);
+
 const Footer = () => {
    return (
       <footer>
          <Container maxWidth="xl">
             <div className={styles.wrapper}>
                <div className={styles.main}>
-                  <div className={`${styles.footerItem} ${styles.contact}`}>
+                  <div className={cn("footerItem", "contact")}>
                      <h2>
                         <Link to="/">
                            <strong>watch</strong>trailer
@@ -75,12 +77,7 @@ const Footer = () => {
                         </li>
                      </ul>
                   </div>
-                  <div
-                     className={cn({
-                        [styles.footerItem]: true,
-                        [styles.download]: true,
-                     })}
-                  >
+                  <div className={cn("footerItem", "download")}>
                      <h2>GET YOUR APP NOW</h2>
                      <p>Dowload App And Get Free Movie Ticket !</p>
                      <div className={styles.downloadIcon}>

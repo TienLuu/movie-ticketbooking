@@ -5,17 +5,19 @@ import { Navigation } from "swiper";
 
 // Import Library's Components
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import cn from "classnames";
+import classnames from "classnames/bind";
 
 // Import Module Css
 import styles from "./styles.module.scss";
 
-const FilmSlide = ({ btnPrevclass, btnNextClass, swiperClass, movies }) => {
+const cn = classnames.bind(styles);
+
+const FilmSlide = ({ btnPrevClass, btnNextClass, swiperClass, movies }) => {
    return (
       <div>
          <Swiper
             navigation={{
-               prevEl: `.${btnPrevclass}`,
+               prevEl: `.${btnPrevClass}`,
                nextEl: `.${btnNextClass}`,
             }}
             slidesPerView={2}
@@ -44,7 +46,11 @@ const FilmSlide = ({ btnPrevclass, btnNextClass, swiperClass, movies }) => {
                      <div className={styles.filmItem}>
                         <div className={styles.itemHeading}>
                            <div className={styles.itemOverlay}>
-                              <span className={cn({ under18: !movie.hot })}>
+                              <span
+                                 className={cn({
+                                    under18: !movie.hot,
+                                 })}
+                              >
                                  {movie.hot ? "18+" : "16+"}
                               </span>
                            </div>
@@ -66,20 +72,10 @@ const FilmSlide = ({ btnPrevclass, btnNextClass, swiperClass, movies }) => {
             ))}
          </Swiper>
          <div className={styles.filmNavigate}>
-            <span
-               className={cn({
-                  [styles.arrowPrev]: true,
-                  [btnPrevclass]: true,
-               })}
-            >
+            <span className={`${btnPrevClass} ${cn("arrowPrev")}`}>
                <ArrowRightAltIcon />
             </span>
-            <span
-               className={cn({
-                  [styles.arrowNext]: true,
-                  [btnNextClass]: true,
-               })}
-            >
+            <span className={`${btnNextClass} ${cn("arrowNext")}`}>
                <ArrowRightAltIcon />
             </span>
          </div>

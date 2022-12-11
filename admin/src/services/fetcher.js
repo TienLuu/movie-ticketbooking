@@ -1,30 +1,42 @@
-import axios from 'axios'
-import localService from './localService'
+// Import Library's Component
+import axios from "axios";
+
+// Import Services
+import localService from "./localService";
 
 const fetcher = axios.create({
-    baseURL: "https://movienew.cybersoft.edu.vn/api",
-    headers: {
-        TokenCybersoft: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCAzMiIsIkhldEhhblN0cmluZyI6IjE1LzA0LzIwMjMiLCJIZXRIYW5UaW1lIjoiMTY4MTUxNjgwMDAwMCIsIm5iZiI6MTY1MzkzMDAwMCwiZXhwIjoxNjgxNjY0NDAwfQ.oR9K8iSTqbo-t0Q_a-WFnKePPaMAr7sdlgR5xKAtQWA",
-    }
-})
+   baseURL: "https://movienew.cybersoft.edu.vn/api/",
+   headers: {
+      TokenCybersoft:
+         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCAzMiIsIkhldEhhblN0cmluZyI6IjE3LzA0LzIwMjMiLCJIZXRIYW5UaW1lIjoiMTY4MTY4OTYwMDAwMCIsIm5iZiI6MTY1MzkzMDAwMCwiZXhwIjoxNjgxODM3MjAwfQ.Yk1H5QCjda1n9Cd5-k2yU_DLnRqRvaB7FIkn1hIuPE0",
+   },
+});
 
+// Interceptors
 fetcher.interceptors.response.use(
-    (response) => {
-        return response.data.content
-    },
-    (error) => {
-        return Promise.reject(error.response.data.content)
-    }
-)
+   // Success
+   (response) => {
+      return response.data.content;
+   },
+
+   (error) => {
+      return Promise.reject(error.response.data.content);
+   }
+);
 
 fetcher.interceptors.request.use(
-    (config) => {
-        config.headers.Authorization = `Bearer ${localService.user.get()?.accessToken}`
-        return config
-    },
-    (error) => {
-        return Promise.reject(error)
-    }
-)
+   (config) => {
+      // Authorization
+      const { accessToken } = localService.user.get() || {};
 
-export default fetcher
+      if (accessToken) {
+         config.headers.Authorization = `Bearer ${accessToken}`;
+      }
+      return config;
+   },
+   (error) => {
+      return Promise.reject(error);
+   }
+);
+
+export default fetcher;

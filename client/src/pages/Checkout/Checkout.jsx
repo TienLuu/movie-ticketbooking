@@ -7,9 +7,11 @@ import SeatManagement from "./SeatManagement";
 import Ticket from "./Ticket";
 import Loading from "../../layouts/Loading";
 
+// Import Services
+import ticketBookingAPI from "../../services/ticketBookingAPI";
+
 // Import Module Css
 import styles from "./styles.module.scss";
-import ticketBookingAPI from "../../services/ticketBookingAPI";
 
 const Checkout = () => {
    const { checkoutId } = useParams();

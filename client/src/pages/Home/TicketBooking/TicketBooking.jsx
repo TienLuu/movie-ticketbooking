@@ -1,5 +1,9 @@
 // Import Library's Hook
 import { useState, useEffect } from "react";
+
+// Import Custom Hook
+import useRequest from "../../../hooks/useRequest";
+import useToggle from "../../../hooks/useToggle";
 import useWindowSize from "../../../hooks/useWindowSize";
 
 // Import Components
@@ -12,9 +16,12 @@ import Modal from "../../../components/Modal";
 // Import Services
 import cinemaAPI from "../../../services/cinemaAPI";
 
-// Import Module Css
+// Import Util
 import formatDate from "../../../utils/formatDate";
+
+// Import Module Css
 import styles from "./styles.module.scss";
+import Empty from "../../../layouts/Empty/Empty";
 
 const TicketBooking = () => {
    const [cinemaClusterId, setCinemaClusterId] = useState();
@@ -22,32 +29,29 @@ const TicketBooking = () => {
    const [cinemaBranchSelected, setCinemaBranchSelected] = useState();
    const [movieShowtimes, setMovieShowtimes] = useState([]);
 
-   const [isOpenModal, setIsOpenModal] = useState(false);
-   const { width } = useWindowSize();
+   const [value, toggleValue] = useToggle(false);
+   const getCinemaShowtimes = useRequest(cinemaAPI.getCinemaShowtimes, {
+      manual: true,
+   });
+   const { width } = useWindowSize(300);
 
    useEffect(() => {
-      (async () => {
-         try {
-            // Get cinema show times list by cinema cluster id
-            const cinemaShowtimes = await cinemaAPI.getCinemaShowtimes(
-               cinemaClusterId
-            );
-            console.log(cinemaShowtimes);
-
-            const movies = formatMovieShowTimes(
-               cinemaShowtimes[0].lstCumRap[0]
-            );
+      // Get cinema show times list by cinema cluster id
+      getCinemaShowtimes
+         .runAsync(cinemaClusterId)
+         .then((data) => {
+            const movies = formatMovieShowTimes(data[0].lstCumRap[0]);
 
             // Update cinema show times
-            setCinemaShowtimes(cinemaShowtimes);
+            setCinemaShowtimes(data);
 
             // Setup movie show time, cinema branch is selected at position 0
             setMovieShowtimes(movies);
-            setCinemaBranchSelected(cinemaShowtimes[0].lstCumRap[0]);
-         } catch (error) {
+            setCinemaBranchSelected(data[0].lstCumRap[0]);
+         })
+         .catch((error) => {
             console.log(error);
-         }
-      })();
+         });
    }, [cinemaClusterId]);
 
    // Format show times
@@ -75,12 +79,12 @@ const TicketBooking = () => {
 
    // Open/Close modal
    const handleSelect = () => {
-      setIsOpenModal(!isOpenModal);
+      toggleValue(!value);
    };
 
    // Closed modal when click cinema branch
    const handleSelectCinemaBranchInModal = () => {
-      setIsOpenModal(false);
+      toggleValue(false);
    };
 
    const handleSelectCinemaBranch = (cinemaBranchId) => {
@@ -105,6 +109,10 @@ const TicketBooking = () => {
    const handleSelectCinemaCluster = (cinemaClusterId) => {
       setCinemaClusterId(cinemaClusterId);
    };
+
+   if (!getCinemaShowtimes.data) {
+      return <Empty />;
+   }
 
    return (
       <section className={styles.ticketBooking}>
@@ -135,7 +143,7 @@ const TicketBooking = () => {
                   ) : undefined}
                   <Modal
                      title="Danh sách rạp"
-                     isOpen={isOpenModal}
+                     isOpen={value}
                      onClose={handleSelect}
                   >
                      <Movietheaters

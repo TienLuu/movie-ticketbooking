@@ -2,10 +2,12 @@
 import { useState } from "react";
 
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
 
 // Import Module Css
 import styles from "./styles.module.scss";
+
+const cn = classnames.bind(styles);
 
 const SeatItem = ({
    seatInfo,
@@ -43,13 +45,12 @@ const SeatItem = ({
    return (
       <>
          <div
-            className={cn(
-               { [styles.seat]: true },
-               { [styles.active]: isSelected },
-               { [styles.selected]: seatInfo?.daDat },
-               { [styles.seatNormal]: seatInfo.loaiGhe === "Thuong" },
-               { [styles.seatVip]: seatInfo.loaiGhe === "Vip" }
-            )}
+            className={cn("seat", {
+               active: isSelected,
+               selected: seatInfo?.daDat,
+               seatNormal: seatInfo.loaiGhe === "Thuong",
+               seatVip: seatInfo.loaiGhe === "Vip",
+            })}
             onClick={() => handleSelectSeat(seatInfo.maGhe)}
          >
             {lineName}

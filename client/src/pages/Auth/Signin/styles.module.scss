@@ -16,11 +16,12 @@
    input {
       width: 100%;
       padding: 0.6rem 0.5rem;
-      background: #eee;
+      background: var(--clr-bg5);
       outline: none;
       border-radius: 0.2rem;
-      border: 1px solid #ddd;
+      border: 1px solid var(--clr-border1);
       margin-bottom: 1rem;
+      font-size: 0.75rem;
 
       &::placeholder {
          font-size: 0.75rem;
@@ -37,9 +38,9 @@
    }
 
    button {
-      border: 1px solid #ff6600;
-      background-color: #ff6600;
-      color: #fff;
+      border: 1px solid var(--clr-primary);
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
       border-radius: 2rem;
       padding: 0.75rem 2.8125rem;
       margin-top: 0.75rem;
@@ -53,15 +54,15 @@
       cursor: pointer;
 
       &:hover {
-         background-color: #fff;
-         color: #ff6600;
-         border: 1px solid #ff6600;
+         background-color: var(--clr-white);
+         color: var(--clr-primary);
+         border: 1px solid var(--clr-primary);
       }
    }
 }
 
 .signinLeft {
-   background-color: #fff;
+   background-color: var(--clr-white);
    height: 100%;
    padding: 2rem 1.5rem 1rem;
    border-radius: inherit;
@@ -86,13 +87,13 @@
 
       span {
          display: block;
-         color: rgb(19 167 241);
+         color: var(--clr-findSomething);
          font-weight: 600;
          cursor: pointer;
 
          &:hover,
          &:focus {
-            color: #ff6600;
+            color: var(--clr-primary);
          }
 
          @media (min-width: 640px) {
@@ -105,7 +106,7 @@
       display: block;
       width: 100%;
       font-size: 0.75rem;
-      color: red;
+      color: var(--clr-red);
       text-align: left;
       position: relative;
       top: -10px;
@@ -113,7 +114,7 @@
 }
 
 .signinRight {
-   background-color: #ff6600;
+   background-color: var(--clr-primary);
    padding: 65px 30px;
    flex: 1 1 50%;
    height: 100%;
@@ -132,20 +133,20 @@
    }
 
    h4 {
-      color: #fff;
+      color: var(--clr-white);
       margin-bottom: 0.2rem;
    }
 
    button {
-      background-color: #fff;
-      color: #ff6600;
+      background-color: var(--clr-white);
+      color: var(--clr-primary);
       border: 1px solid;
-      border-color: #fff;
+      border-color: var(--clr-white);
 
       &:hover {
-         color: #fff;
-         border-color: #fff;
-         background-color: #ff6600;
+         color: var(--clr-white);
+         border-color: var(--clr-white);
+         background-color: var(--clr-primary);
       }
    }
 
@@ -153,6 +154,6 @@
       width: 90%;
       margin: 0 auto;
       font-size: 0.75rem;
-      color: #fff;
+      color: var(--clr-white);
    }
 }

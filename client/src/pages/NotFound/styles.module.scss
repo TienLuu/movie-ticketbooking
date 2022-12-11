@@ -36,26 +36,26 @@
 
    h2 {
       font-size: 1.5rem;
-      color: #ff6600;
+      color: var(--clr-primary);
       margin-top: 1rem;
       text-transform: capitalize;
    }
 
    p {
       font-size: 0.9375rem;
-      color: rgb(130, 130, 130);
+      color: var(--clr-text1);
       max-width: 600px;
    }
 
    button {
       text-transform: uppercase;
       text-decoration: none;
-      background: #ff6600;
-      color: #fff;
+      background: var(--clr-primary);
+      color: var(--clr-white);
       margin-top: 1rem;
       padding: 1rem 2.5rem;
       border-radius: 12px;
-      border: 1px solid #ff6600;
+      border: 1px solid var(--clr-primary);
       font-size: 0.75rem;
       letter-spacing: 0.05rem;
       cursor: pointer;

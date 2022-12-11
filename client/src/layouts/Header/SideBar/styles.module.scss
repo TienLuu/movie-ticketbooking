@@ -1,0 +1,13 @@
+#navBrand {
+   text-transform: uppercase;
+   font-size: 1.7rem;
+
+   cursor: pointer;
+   strong {
+      color: var(--clr-primary);
+   }
+
+   @media (max-width: 360px) {
+      font-size: 1.3rem;
+   }
+}

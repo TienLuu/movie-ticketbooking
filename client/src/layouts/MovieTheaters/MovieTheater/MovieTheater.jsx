@@ -1,13 +1,16 @@
+// Import Library's Component
+import classnames from "classnames/bind";
+
 // Import Module Css
 import styles from "./styles.module.scss";
+
+const cn = classnames.bind(styles);
 
 const MovieTheater = ({ logo, cinemaClusterId, isActive, setActive }) => {
    return (
       <>
          <div
-            className={`${styles.movieTheaterInfor} ${
-               isActive ? `${styles.active}` : ""
-            } `}
+            className={cn("movieTheaterInfor", { active: isActive })}
             onClick={() => setActive(cinemaClusterId)}
          >
             <div className={styles.image}>

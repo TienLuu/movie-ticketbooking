@@ -1,17 +1,18 @@
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 // Import Module Css
 import styles from "./styles.module.scss";
 
+const cn = classnames.bind(styles);
+
 const CinemaItem = ({ cinemaBranch, onSelect, isActive, logo }) => {
    return (
       <>
          <div
-            className={cn({
-               [styles.cinemaItem]: true,
-               [styles.active]: isActive,
+            className={cn("cinemaItem", {
+               active: isActive,
             })}
             onClick={() => onSelect(cinemaBranch.maCumRap)}
          >
@@ -20,7 +21,6 @@ const CinemaItem = ({ cinemaBranch, onSelect, isActive, logo }) => {
                   <img src={logo} alt={cinemaBranch.maCumRap} />
                </div>
                <div className={styles.text}>{cinemaBranch.tenCumRap}</div>
-
                <div className={styles.icon}>
                   <KeyboardArrowRightIcon />
                </div>

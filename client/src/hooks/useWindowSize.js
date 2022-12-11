@@ -1,15 +1,41 @@
 // Import Library's Hook
 import { useEffect, useState } from "react";
 
-const useWindowSize = () => {
-   const [size, setSize] = useState({
+const useWindowSize = (delay) => {
+   const [windowSize, setWindowSize] = useState({
       width: window.innerWidth,
       height: window.innerHeight,
    });
 
    useEffect(() => {
+      let shouldWait = false;
+      let waitingValue = null;
+      const timeoutFunc = () => {
+         if (waitingValue == null) {
+            shouldWait = false;
+         } else {
+            setWindowSize(waitingValue);
+            waitingValue = null;
+            setTimeout(timeoutFunc, delay);
+         }
+      };
+
       const handleResize = () => {
-         setSize({ width: window.innerWidth, height: window.innerHeight });
+         if (shouldWait) {
+            waitingValue = {
+               width: window.innerWidth,
+               height: window.innerHeight,
+            };
+            return;
+         }
+
+         setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+         });
+         shouldWait = true;
+
+         setTimeout(timeoutFunc, delay);
       };
 
       window.addEventListener("resize", handleResize);
@@ -19,7 +45,7 @@ const useWindowSize = () => {
       };
    }, []);
 
-   return size;
+   return windowSize;
 };
 
 export default useWindowSize;

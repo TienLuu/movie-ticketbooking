@@ -21,7 +21,7 @@
       font-size: 1.6rem;
       font-weight: 700;
       line-height: 2rem;
-      color: #ff6600;
+      color: var(--clr-primary);
       text-align: center;
       text-transform: capitalize;
 
@@ -37,7 +37,7 @@
 
    @media (min-width: 768px) {
       border: 1px solid;
-      border-color: rgb(229, 229, 229);
+      border-color: var(--clr-border1);
       margin-left: 0;
       margin-right: 0;
    }

@@ -1,0 +1,27 @@
+input:not([type="checkbox"]) {
+   width: 100%;
+   padding: 0.6rem 0.5rem;
+   background: var(--clr-bg5);
+   outline: none;
+   border-radius: 0.2rem;
+   border: 1px solid var(--clr-border1);
+   margin-bottom: 1rem;
+
+   &::placeholder {
+      font-size: 0.75rem;
+   }
+}
+
+textarea {
+   height: auto;
+}
+
+.errorMess {
+   display: block;
+   width: 100%;
+   font-size: 0.75rem;
+   color: var(--clr-red);
+   text-align: left;
+   position: relative;
+   top: -10px;
+}

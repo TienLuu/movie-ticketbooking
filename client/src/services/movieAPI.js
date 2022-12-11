@@ -1,8 +1,8 @@
 import fetcher from "./fetcher";
 
 const movieAPI = {
-   getBanner: async () => {
-      return await fetcher.get("QuanLyPhim/LayDanhSachBanner");
+   getBanners: () => {
+      return fetcher.get("QuanLyPhim/LayDanhSachBanner");
    },
 
    getMovies: async () => {

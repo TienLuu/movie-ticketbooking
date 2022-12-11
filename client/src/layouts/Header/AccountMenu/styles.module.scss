@@ -1,0 +1,45 @@
+.userIcon {
+   svg {
+      width: 1.2em;
+      height: 1.2em;
+      color: var(--clr-primary);
+   }
+
+   span {
+      margin-left: 5px;
+      font-size: 16px;
+      font-weight: 500;
+
+      @media (min-width: 980px) {
+         display: inline-block;
+         width: 80px;
+      }
+   }
+
+   &:hover {
+      background-color: transparent !important;
+      span {
+         color: var(--clr-primary);
+      }
+   }
+}
+
+.signin {
+   font-size: 0.8125rem !important;
+   font-weight: 500;
+   border-radius: 4px !important;
+   width: 110px;
+   border: 1px solid !important;
+   border-color: var(--clr-border1) !important;
+   margin: 0 1rem !important;
+   text-transform: uppercase;
+   background-color: var(--clr-bg3) !important;
+   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+
+   &:hover {
+      background-color: var(--clr-primary) !important;
+      border-color: var(--clr-primary);
+
+      color: var(--clr-white);
+   }
+}

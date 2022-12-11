@@ -6,16 +6,18 @@ import { useSelector, useDispatch } from "react-redux";
 // Import Library's Component
 import swal from "sweetalert";
 
+// Import Components
+import TextField from "../../../components/TextField";
+
 // Import slice
-import { signin, resetState } from "../../../slices/authSlice";
+import { signin } from "../../../slices/authSlice";
 
 // Import Module Css
 import styles from "./styles.module.scss";
-import { useEffect } from "react";
 
 const Signin = () => {
    const [searchParams, setSearchParams] = useSearchParams();
-   const { user, error } = useSelector((state) => state.auth);
+   const { user } = useSelector((state) => state.auth);
    const dispatch = useDispatch();
 
    // Hanlde form
@@ -31,20 +33,14 @@ const Signin = () => {
       mode: "onTouched",
    });
 
-   // Check user account when sign in failed
-   useEffect(() => {
-      if (!user && error) {
-         swal("Please check the information again!", "", "warning");
-      }
-
-      // Reset error state when sign in success
-      return () => {
-         dispatch(resetState());
-      };
-   }, [error]);
-
    const onSubmit = (values) => {
-      dispatch(signin(values));
+      dispatch(signin(values))
+         .unwrap()
+         .then()
+         .catch((error) => {
+            // Check user account when sign in failed
+            swal("Please check the information again!", "", "warning");
+         });
    };
 
    // Navigate homepage or redicrectUrl when sign in success
@@ -60,40 +56,26 @@ const Signin = () => {
                <h4>Sign in</h4>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-               <div>
-                  <input
-                     type="text"
-                     placeholder="Username"
-                     {...register("taiKhoan", {
-                        required: {
-                           value: true,
-                           message: "This field is required",
-                        },
-                     })}
-                  />
-               </div>
-               {errors.taiKhoan && (
-                  <span className={styles.errorMess}>
-                     {errors.taiKhoan.message}
-                  </span>
-               )}
-               <div>
-                  <input
-                     type="text"
-                     placeholder="Password"
-                     {...register("matKhau", {
-                        required: {
-                           value: true,
-                           message: "This field is required",
-                        },
-                     })}
-                  />
-               </div>
-               {errors.matKhau && (
-                  <span className={styles.errorMess}>
-                     {errors.matKhau.message}
-                  </span>
-               )}
+               <TextField
+                  placeholder="Username"
+                  {...register("taiKhoan", {
+                     required: {
+                        value: true,
+                        message: "This field is required",
+                     },
+                  })}
+                  error={errors.taiKhoan && errors.taiKhoan.message}
+               />
+               <TextField
+                  placeholder="Password"
+                  {...register("matKhau", {
+                     required: {
+                        value: true,
+                        message: "This field is required",
+                     },
+                  })}
+                  error={errors.matKhau && errors.matKhau.message}
+               />
                <div className={styles.lookingFor}>
                   <p>
                      Forgot your password?

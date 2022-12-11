@@ -13,7 +13,7 @@ const Ticket = ({ movieInfor, seatsSelected }) => {
    // Check the list of seats selected before purchase
    const handlePurchase = () => {
       if (!seatsSelected.length) {
-         alert("Please choose your seat before payment!");
+         swal("Please choose your seat before payment!", "", "warning");
          return;
       }
       swal("Payment Success!", "You clicked the button!", "success").then(() =>

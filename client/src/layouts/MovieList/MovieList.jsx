@@ -1,5 +1,5 @@
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
 
 // Import Components
 import ShowtimesList from "../ShowtimesList";
@@ -7,6 +7,8 @@ import Empty from "../Empty/Empty";
 
 // Import Module Css
 import styles from "./styles.module.scss";
+
+const cn = classnames.bind(styles);
 
 const MovieList = ({ movieList = [] }) => {
    // Filter movie Nowshowing
@@ -30,7 +32,7 @@ const MovieList = ({ movieList = [] }) => {
                               <div className={styles.ageLimit}>
                                  <span
                                     className={cn({
-                                       [styles.under18]: !item.hot,
+                                       under18: !item.hot,
                                     })}
                                  >
                                     {item.hot ? "18+" : "16+"}

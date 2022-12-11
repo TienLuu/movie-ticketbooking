@@ -1,4 +1,8 @@
+// Import Library's Component
 import axios from "axios";
+
+// Import Services
+import localService from "../services/localService";
 
 const fetcher = axios.create({
    baseURL: "https://movienew.cybersoft.edu.vn/api/",
@@ -23,7 +27,7 @@ fetcher.interceptors.response.use(
 fetcher.interceptors.request.use(
    (config) => {
       // Authorization
-      const { accessToken } = JSON.parse(localStorage.getItem("user")) || {};
+      const { accessToken } = localService.user.get() || {};
 
       if (accessToken) {
          config.headers.Authorization = `Bearer ${accessToken}`;

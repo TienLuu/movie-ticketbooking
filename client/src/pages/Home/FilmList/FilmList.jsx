@@ -1,8 +1,12 @@
 // Import Library's Hook
 import { useEffect, useState } from "react";
 
+// Import Custom Hook
+import useRequest from "../../../hooks/useRequest";
+
 // Import Components
 import FilmSlide from "./FilmSilde/FilmSlide";
+import Empty from "../../../layouts/Empty";
 
 // Import API Config
 import movieAPI from "../../../services/movieAPI";
@@ -12,15 +16,18 @@ import styles from "./styles.module.scss";
 
 const FilmList = () => {
    const [movies, setMovies] = useState([]);
+   const getMovies = useRequest(movieAPI.getMovies, { manual: true });
 
    // Get movie list
    useEffect(() => {
-      (async () => {
-         try {
-            const data = await movieAPI.getMovies();
+      getMovies
+         .runAsync()
+         .then((data) => {
             setMovies(data);
-         } catch (error) {}
-      })();
+         })
+         .catch((error) => {
+            console.log(error);
+         });
    }, []);
 
    // Filter movie now showing
@@ -30,8 +37,10 @@ const FilmList = () => {
    const moviesCSoon = movies.filter(
       (movie) => movie.dangChieu === false && movie.sapChieu === true
    );
-   console.log(movies);
 
+   if (!getMovies.data) {
+      return <Empty />;
+   }
    return (
       <>
          <section className={styles.filmList}>
@@ -40,9 +49,8 @@ const FilmList = () => {
                   <h2>
                      <span>Now</span> showing
                   </h2>
-
                   <FilmSlide
-                     btnPrevclass="nowShowing__prev"
+                     btnPrevClass="nowShowing__prev"
                      btnNextClass="nowShowing__next"
                      swiperClass="nowShowing__film"
                      movies={movieNShowing}
@@ -53,9 +61,8 @@ const FilmList = () => {
                   <h2>
                      <span>Coming</span> soon
                   </h2>
-
                   <FilmSlide
-                     btnPrevclass="comingSoon__prev"
+                     btnPrevClass="comingSoon__prev"
                      btnNextClass="comingSoon__next"
                      swiperClass="comingSoon__film"
                      movies={moviesCSoon}

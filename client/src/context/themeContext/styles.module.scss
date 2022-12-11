@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
+:root:has(.theme) {
+   --clr-white: rgb(255, 255, 255);
+   --clr-white-dot95: rgba(255, 255, 255, 0.95);
+   --clr-white-dot9: rgba(255, 255, 255, 0.9);
+   --clr-white-dot7: rgba(255, 255, 255, 0.7);
+   --clr-white-dot5: rgba(255, 255, 255, 0.5);
+   --clr-white-dot2: rgba(255, 255, 255, 0.2);
+
+   --clr-black: rgb(0, 0, 0);
+   --clr-black-dot5: rgba(0, 0, 0, 0.5);
+   --clr-gray: gray;
+   --clr-red: red;
+
+   --clr-text1: rgb(130, 130, 130);
+   --clr-text2: rgb(115, 115, 115);
+   --clr-text3: rgb(38, 38, 38);
+   --clr-text4: rgb(2, 132, 199);
+   --clr-text5: rgb(163, 163, 163);
+   --clr-description: rgb(64, 64, 64);
+
+   --clr-title1: rgb(38, 38, 38);
+   --clr-title2: rgb(56, 56, 56);
+   --clr-subtitle: rgb(163, 163, 163);
+
+   --clr-btn1: rgba(255, 102, 0, 1);
+   --clr-btn1-dot9: rgba(255, 102, 0, 0.9);
+   --clr-icon: #262626;
+   --clr-iconArrow: rgb(163, 163, 163);
+
+   --clr-screenLight: rgba(31, 73, 125, 0.9);
+   --clr-findSomething: rgb(19 167 241);
+   --clr-scrollbar-track: #f0f0f0;
+   --clr-scrollbar-thump: #c9c9c9;
+   --clr-showMore: rgb(252, 211, 77);
+   --clr-bgSearch: rgb(189, 189, 189);
+   --clr-bg-active: rgba(255, 102, 0, 0.2);
+   --clr-hover-showtimes: rgba(255, 102, 0, 0.8);
+   --clr-hover-copyright: #ffe0b2;
+   --clr-bg-modalVideo: rgb(38, 38, 38);
+   --clr-bg-btnModalVideo: #737373;
+
+   --clr-primary: #ff6600;
+   --clr-highlight: #ff4500;
+
+   --clr-bg1: #e88021;
+   --clr-bg2: #9b2020;
+   --clr-bg3: rgb(250, 250, 250);
+   --clr-bg4: rgb(225, 225, 225);
+   --clr-bg5: rgb(238, 238, 238);
+   --clr-bg6: rgb(229, 229, 229);
+   --clr-bg7: rgba(224, 242, 254, 0.5);
+   --clr-bg8: #101010;
+   --clr-bg9: rgb(245, 245, 245);
+   --clr-bg10: rgb(58, 51, 51);
+
+   --clr-border1: rgb(229, 229, 229);
+   --clr-border2: rgb(198, 198, 201);
+   --clr-border3: rgb(245, 245, 245);
+   --clr-border4: rgb(56, 189, 248);
+   --clr-border5: rgb(45, 45, 45);
+   --clr-border6: rgb(212, 212, 212);
+
+   --clr-vip: rgb(239, 191, 62);
+   --clr-normal: rgb(0, 125, 0);
+   --clr-select: rgb(65, 195, 144);
+   --clr-selected: #ff6600;
+}

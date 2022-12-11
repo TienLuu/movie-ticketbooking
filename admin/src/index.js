@@ -1,27 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import App from './App';
-import GlobalStyles from './components/GlobalStyles';
-import { ThemeProvider } from './context/themeContext/ThemeContext';
-import store from './store';
+// Import Library's Hook
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+
+// Import Components
+import GlobalStyles from "./components/GlobalStyles";
+import App from "./App";
+
+// Import Redux store
+import store from "./store";
+
+// Import Context
+import { ThemeProvider } from "./context/themeContext/ThemeContext";
 // import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <ThemeProvider>
-          <GlobalStyles>
-            <App />
-          </GlobalStyles>
-        </ThemeProvider>
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
+   <React.StrictMode>
+      <Provider store={store}>
+         <BrowserRouter>
+            <ThemeProvider>
+               <GlobalStyles>
+                  <App />
+               </GlobalStyles>
+            </ThemeProvider>
+         </BrowserRouter>
+      </Provider>
+   </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

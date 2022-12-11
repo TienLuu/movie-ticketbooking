@@ -1,40 +1,42 @@
-import { Link } from 'react-router-dom'
-import classNames from 'classnames/bind'
+// Import Library's Hook
+import { Link } from "react-router-dom";
 
-import TreeView from '../../../components/TreeView'
-import { Logo } from '../../../components/SVG'
-import sidebarConfig from './sidebar-config'
+// Import Library's Component
+import classNames from "classnames/bind";
 
-import useToggle from '../../../hooks/useToggle'
+// Import Components
+import TreeView from "../../../components/TreeView";
 
-import styles from './Sidebar.module.scss'
-const cx = classNames.bind(styles)
+// Import Hooks
+import useToggle from "../../../hooks/useToggle";
+
+// Import Module Css
+import styles from "./styles.module.scss";
+import sidebarConfig from "./sidebar-config";
+
+const cn = classNames.bind(styles);
 
 const Sidebar = () => {
-    const [isExpand, toggleIsExpand] = useToggle(false)
+   const [isExpand, toggleIsExpand] = useToggle(false);
 
-    return (
-        <div className={cx(
-            "wrapper",
-            { expand: isExpand }
-        )}>
-            <Link to='/admin' className={cx("logoWrapper")}>
-                {/* <div className={cx("logo")}>
-                    <Logo width={40} height={40} />
-                </div> */}
-                <p><strong>WATCH</strong>TRAILER</p>
-            </Link>
-            <div
-                className={cx("sidebarToggleBtn", {
-                    active: isExpand
-                })}
-                onClick={toggleIsExpand}
-            />
-            <div className={cx("menu")}>
-                <TreeView data={sidebarConfig} />
-            </div>
-        </div>
-    )
-}
+   return (
+      <div className={cn("wrapper", { expand: isExpand })}>
+         <Link to="/admin" className={styles.logoWrapper}>
+            <p>
+               <strong>WATCH</strong>TRAILER
+            </p>
+         </Link>
+         <div
+            className={cn("sidebarToggleBtn", {
+               active: isExpand,
+            })}
+            onClick={toggleIsExpand}
+         />
+         <div className={styles.menu}>
+            <TreeView data={sidebarConfig} />
+         </div>
+      </div>
+   );
+};
 
-export default Sidebar
+export default Sidebar;

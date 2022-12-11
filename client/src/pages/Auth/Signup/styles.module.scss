@@ -16,10 +16,10 @@
    input:not([type="checkbox"]) {
       width: 100%;
       padding: 0.6rem 0.5rem;
-      background: #eee;
+      background: var(--clr-bg5);
       outline: none;
       border-radius: 0.2rem;
-      border: 1px solid #ddd;
+      border: 1px solid var(--clr-border1);
       margin-bottom: 1rem;
 
       &::placeholder {
@@ -28,9 +28,9 @@
    }
 
    button {
-      border: 1px solid #ff6600;
-      background-color: #ff6600;
-      color: #fff;
+      border: 1px solid var(--clr-primary);
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
       border-radius: 2rem;
       padding: 0.75rem 2.8125rem;
       margin-top: 1.25rem;
@@ -44,15 +44,15 @@
       cursor: pointer;
 
       &:hover {
-         background-color: #fff;
-         color: #ff6600;
-         border: 1px solid #ff6600;
+         background-color: var(--clr-white);
+         color: var(--clr-primary);
+         border: 1px solid var(--clr-primary);
       }
    }
 }
 
 .signupLeft {
-   background-color: #fff;
+   background-color: var(--clr-white);
    height: 100%;
    padding: 2rem 1.5rem 1rem;
    border-radius: inherit;
@@ -69,7 +69,7 @@
 
    h4 {
       margin-bottom: 1rem;
-      color: #262626;
+      color: var(--clr-title1);
    }
 
    .checkboxTerms {
@@ -79,7 +79,7 @@
       input {
          margin-right: 0.5rem;
          outline-offset: -1px;
-         outline-color: #ff6600;
+         outline-color: var(--clr-primary);
       }
 
       label {
@@ -92,7 +92,7 @@
       display: block;
       width: 100%;
       font-size: 0.75rem;
-      color: red;
+      color: var(--clr-red);
       text-align: left;
       position: relative;
       top: -10px;
@@ -108,7 +108,7 @@
    flex: 1 1 50%;
    height: 100%;
    padding: 65px 30px;
-   background-color: #ff6600;
+   background-color: var(--clr-primary);
    border-radius: inherit;
 
    @media (min-width: 640px) {
@@ -123,7 +123,7 @@
    }
 
    h4 {
-      color: #fff;
+      color: var(--clr-white);
       margin-bottom: 0.2rem;
    }
 
@@ -131,19 +131,19 @@
       width: 90%;
       margin: 0 auto;
       font-size: 0.75rem;
-      color: #fff;
+      color: var(--clr-white);
    }
 
    button {
-      background-color: #fff;
+      background-color: var(--clr-white);
       border: 1px solid;
-      border-color: #fff;
-      color: #ff6600;
+      border-color: var(--clr-white);
+      color: var(--clr-primary);
 
       &:hover {
-         color: #fff;
-         border-color: #fff;
-         background-color: #ff6600;
+         color: var(--clr-white);
+         border-color: var(--clr-white);
+         background-color: var(--clr-primary);
       }
    }
 }

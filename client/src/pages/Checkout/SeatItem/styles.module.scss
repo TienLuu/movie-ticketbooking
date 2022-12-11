@@ -11,7 +11,7 @@
    width: 1rem;
    height: 1rem;
    border-radius: 3px;
-   background: var(--clr-bg1);
+   background: var(--clr-bg4);
    cursor: pointer;
    font-size: 0.6rem;
    display: flex;
@@ -42,18 +42,18 @@
 }
 
 .seat.seatNormal {
-   background-color: rgb(0, 125, 0);
+   background-color: var(--clr-normal);
 }
 
 .seat.seatVip {
-   background-color: var(--clr-seatSelected);
+   background-color: var(--clr-vip);
 }
 
 .seat.active {
-   background: var(--clr-seatSelect);
+   background: var(--clr-select);
 }
 
 .seat.selected {
-   background: #ff6600;
+   background: var(--clr-selected);
    cursor: default;
 }

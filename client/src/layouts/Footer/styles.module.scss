@@ -1,11 +1,6 @@
-/*
-=============================================
-                    FOOTER
-=============================================
-*/
 footer {
-   color: #fff;
-   background: #101010;
+   color: var(--clr-white);
+   background: var(--clr-bg8);
 }
 
 .wrapper {
@@ -19,13 +14,13 @@ footer {
 }
 
 .footerItem {
-   color: #fff;
+   color: var(--clr-white);
    padding-right: 40px;
 
    h2 {
       font-size: 1.1rem;
       font-weight: 400;
-      color: #ff6600;
+      color: var(--clr-primary);
       line-height: 1.6;
       letter-spacing: 0.0075em;
       text-transform: uppercase;
@@ -41,7 +36,7 @@ footer {
          transition: color 0.3s ease;
 
          &:hover {
-            color: #ff6600;
+            color: var(--clr-primary);
          }
       }
    }
@@ -53,12 +48,12 @@ footer {
    h2 {
       font-size: 1.5rem;
       font-weight: 500;
-      color: #fff;
+      color: var(--clr-white);
 
       margin-bottom: 20px;
 
       strong {
-         color: #ff6600;
+         color: var(--clr-primary);
       }
    }
 
@@ -95,7 +90,7 @@ footer {
       font-size: 16px;
 
       span {
-         color: #ff6600;
+         color: var(--clr-primary);
       }
    }
 }
@@ -104,19 +99,19 @@ footer {
    display: flex;
    justify-content: space-between;
    padding: 15px 0;
-   border-top: 1px solid rgb(45, 45, 45);
+   border-top: 1px solid var(--clr-border5);
 
    font-size: 14px;
 
    span {
       margin-left: 5px;
-      color: #ff6600;
+      color: var(--clr-primary);
 
       transition: color 0.3s ease;
       cursor: pointer;
 
       &:hover {
-         color: #ffe0b2;
+         color: var(--clr-hover-copyright);
       }
    }
 
@@ -129,7 +124,7 @@ footer {
          transition: color 0.3s ease;
 
          &:hover {
-            color: #ff6600;
+            color: var(--clr-primary);
          }
       }
    }

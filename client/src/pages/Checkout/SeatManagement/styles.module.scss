@@ -8,7 +8,7 @@
 
    h1 {
       font-size: 1.6rem;
-      color: #ff6600;
+      color: var(--clr-primary);
       margin-bottom: 2rem;
    }
 }
@@ -28,13 +28,13 @@
       font-size: 1rem;
    }
 
-   .seatSelected::before {
+   .seatSelect::before {
       content: "";
       display: inline-block;
       width: 14px;
       height: 14px;
 
-      background: var(--clr-seatSelect);
+      background: var(--clr-select);
       margin-right: 9px;
    }
 
@@ -44,7 +44,7 @@
       width: 14px;
       height: 14px;
 
-      background: var(--clr-seatSelected);
+      background: var(--clr-selected);
       margin-right: 9px;
    }
 
@@ -54,7 +54,7 @@
       width: 14px;
       height: 14px;
 
-      background: rgb(0, 125, 0);
+      background: var(--clr-normal);
       margin-right: 9px;
    }
 
@@ -64,7 +64,7 @@
       width: 14px;
       height: 14px;
 
-      background: var(--clr-seatSelected);
+      background: var(--clr-vip);
       margin-right: 9px;
    }
 }
@@ -81,7 +81,7 @@
 
    border: solid 5px transparent;
    border-radius: 50%/60px 60px 0 0;
-   background-color: #fff;
+   background-color: var(--clr-wwhite);
 
    .wrapper {
       position: relative;
@@ -119,7 +119,7 @@
 
 .screen {
    border: solid 5px transparent;
-   border-color: gray transparent transparent transparent;
+   border-color: var(--clr-gray) transparent transparent transparent;
    border-radius: 50%/20px 20px 0 0;
    min-height: 180px;
    overflow: hidden;
@@ -144,7 +144,7 @@
 
    background: radial-gradient(
       at 50% 0,
-      rgba(31, 73, 125, 0.9),
+      var(--clr-screenLight),
       transparent 100%
    );
 }
@@ -154,9 +154,9 @@
    position: absolute;
    inset: 0;
 
-   border: 10px solid red;
+   border: 10px solid var(--clr-red);
    border-top: none;
-   border-left: 10px solid #fff;
-   border-right: 10px solid #fff;
+   border-left: 10px solid var(--clr-white);
+   border-right: 10px solid var(--clr-white);
    border-bottom: 300px solid transparent;
 }

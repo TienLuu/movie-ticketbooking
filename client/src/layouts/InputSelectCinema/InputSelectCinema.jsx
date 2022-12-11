@@ -1,9 +1,11 @@
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 // Import Module Css
 import styles from "./styles.module.scss";
+
+const cn = classnames.bind(styles);
 
 const InputSelectCinema = ({
    isMobile,
@@ -15,9 +17,8 @@ const InputSelectCinema = ({
    return (
       <>
          <div
-            className={cn({
-               [styles.InputSelectCinema]: true,
-               [styles.isSelect]: isMobile,
+            className={cn("InputSelectCinema", {
+               isSelect: isMobile,
             })}
          >
             <span>Select Cinema</span>

@@ -1,8 +1,8 @@
 .movieSchedule {
    position: sticky;
    z-index: 35;
-   border-bottom: 1px solid rgb(229, 229, 229);
-   background-color: #fff;
+   border-bottom: 1px solid var(--clr-border1);
+   background-color: var(--clr-white);
    padding: 0.75rem 0;
    top: 56px;
    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);

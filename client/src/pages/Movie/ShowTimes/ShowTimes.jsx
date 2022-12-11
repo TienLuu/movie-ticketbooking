@@ -16,8 +16,6 @@ const ShowTimes = ({ movieShowTimes }) => {
 
    useEffect(() => {
       try {
-         if (!movieShowTimes) return;
-
          // Find cinema cluster by movie is selected
          const cinemaClusterExist = movieShowTimes.heThongRapChieu.filter(
             (item) => item.maHeThongRap === cinemaClusterId
@@ -63,7 +61,6 @@ const ShowTimes = ({ movieShowTimes }) => {
                <div className={styles.title}>
                   <h2>Show times</h2>
                </div>
-
                <div className={styles.showTimeDetail}>
                   <MovieTheaters
                      onSelect={handleSelectCinemaCluster}

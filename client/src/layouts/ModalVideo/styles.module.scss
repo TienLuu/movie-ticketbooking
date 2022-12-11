@@ -31,13 +31,13 @@
       left: 0;
       right: 0;
 
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: var(--clr-black-dot5);
       backdrop-filter: blur(4px);
    }
 }
 
 .modal {
-   background-color: rgb(38, 38, 38);
+   background-color: var(--clr-bg-modalVideo);
    position: relative;
    max-height: 100%;
    max-width: 100%;
@@ -84,7 +84,7 @@
 
    svg {
       display: block;
-      color: #fff;
+      color: var(--clr-white);
       width: 2.5rem;
       height: 2.5rem;
       opacity: 0.8;
@@ -98,7 +98,7 @@
    position: relative;
    height: 100%;
    border-radius: 0.375rem;
-   background-color: rgb(38, 38, 38);
+   background-color: var(--clr-bg-modalVideo);
 
    .video {
       position: relative;
@@ -110,7 +110,7 @@
          left: 50%;
          transform: translate(-50%, -50%);
          font-size: 2rem;
-         color: #ff6600;
+         color: var(--clr-primary);
       }
    }
 
@@ -135,7 +135,7 @@
          display: none;
          font-size: 0.875rem;
          line-height: 1.25rem;
-         color: rgba(255, 255, 255, 0.7);
+         color: var(--clr-white-dot7);
 
          @media (min-width: 768px) {
             display: inline-block;
@@ -146,7 +146,7 @@
          font-size: 0.8125rem;
          line-height: 1.25rem;
          margin-top: 0.5rem;
-         color: rgba(255, 255, 255, 0.7);
+         color: var(--clr-white-dot7);
 
          display: -webkit-box;
          -webkit-line-clamp: 2;
@@ -170,13 +170,13 @@
    button {
       border: none;
       padding: 0.375rem 1.25rem;
-      background-color: #737373;
+      background-color: var(--clr-bg-btnModalVideo);
       border-radius: 0.375rem;
       font-size: 0.875rem;
       font-weight: 700;
       line-height: 1.25rem;
       text-transform: capitalize;
-      color: rgba(255, 255, 255, 0.9);
+      color: var(--clr-white-dot9);
       cursor: pointer;
    }
 }

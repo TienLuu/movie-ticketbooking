@@ -1,13 +1,9 @@
 .checkout {
-   background-color: #fff;
-   color: #000;
+   background-color: var(--clr-white);
+   color: var(--clr-black);
    position: relative;
    min-height: 90vh;
    height: auto;
-
-   @media (min-width: 960px) {
-      height: 90vh;
-   }
 
    .main {
       width: 100%;

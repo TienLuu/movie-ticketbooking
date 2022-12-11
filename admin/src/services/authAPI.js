@@ -1,13 +1,15 @@
-import fetcher from './fetcher'
+import fetcher from "./fetcher";
 
 const authAPI = {
-    login: (values) => {
-        return fetcher.post("/QuanLyNguoiDung/DangNhap", values)
-    },
-    register: (values) => {
-        return fetcher.post("/QuanLyNguoiDung/DangKy", { ...values, maNhom: "GP15" })
-    },
-}
+   signin: (values) => {
+      return fetcher.post("/QuanLyNguoiDung/DangNhap", values);
+   },
+   signup: (values) => {
+      return fetcher.post("/QuanLyNguoiDung/DangKy", {
+         ...values,
+         maNhom: "GP15",
+      });
+   },
+};
 
-
-export default authAPI
+export default authAPI;

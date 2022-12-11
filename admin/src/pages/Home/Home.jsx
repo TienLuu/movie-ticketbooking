@@ -1,21 +1,8 @@
-import React from 'react'
+// Import Module Css
+import styles from "./styles.module.scss";
 
 const Home = () => {
-    return (
-        <div
-            style={{
-                display: "flex",
-                width: "100%",
-                height: "100%",
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: "5rem",
-                textAlign: "center"
-            }}
-        >
-            WelCome Back
-        </div>
-    )
-}
+   return <div className={styles.home}>WelCome Back</div>;
+};
 
-export default Home
+export default Home;

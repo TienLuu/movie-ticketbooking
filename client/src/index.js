@@ -13,12 +13,17 @@ import store from "./store";
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/pagination";
-import "./assets/styles.scss";
+import { ThemeProvider } from "./context/themeContext/ThemeContext";
+import GlobalStyles from "./assets/GlobalStyles";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
    <Provider store={store}>
-      <App />
+      <ThemeProvider>
+         <GlobalStyles>
+            <App />
+         </GlobalStyles>
+      </ThemeProvider>
    </Provider>
 );
 

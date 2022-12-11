@@ -1,5 +1,5 @@
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
 
 // Import Components
 import InputSelectCinema from "../../../layouts/InputSelectCinema";
@@ -11,16 +11,18 @@ import formatDate from "../../../utils/formatDate";
 // Import Module Css
 import styles from "./styles.module.scss";
 
+const cn = classnames.bind(styles);
+
 const CinemaSelect = ({
    isActive,
    cinemaBranch,
    onSelectCinemaBranch,
    logo,
 }) => {
-   const { tenCumRap, diaChi, maCumRap } = cinemaBranch;
+   const { tenCumRap, diaChi, maCumRap, lichChieuPhim } = cinemaBranch;
 
    // Format show times
-   const showtimesList = cinemaBranch.lichChieuPhim.map((item) => {
+   const showtimesList = lichChieuPhim.map((item) => {
       return {
          ...item,
          ngayChieuGioChieu: formatDate(item.ngayChieuGioChieu),
@@ -42,9 +44,8 @@ const CinemaSelect = ({
             />
          </div>
          <div
-            className={cn({
-               [styles.movieList]: true,
-               [styles.active]: isActive,
+            className={cn("movieList", {
+               active: isActive,
             })}
          >
             {isActive ? (

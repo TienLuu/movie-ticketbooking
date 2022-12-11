@@ -1,12 +1,13 @@
-// Import Library's Hook
-import { useState } from "react";
-
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
+
+// Import Custom Hook
+import useToggle from "../../../hooks/useToggle";
 
 // Import Components
 import ModalVideo from "../../../layouts/ModalVideo";
-import Loading from "../../../layouts/Loading";
+import Paragraph from "../../../components/Paragraph";
+import { ButtonPlay } from "../../../components/SVG";
 
 // Import Services
 import formatDate from "../../../utils/formatDate";
@@ -14,19 +15,17 @@ import formatDate from "../../../utils/formatDate";
 // Import Module Css
 import styles from "./styles.module.scss";
 
+const cn = classnames.bind(styles);
+
 const Poster = ({ movieInfor }) => {
-   const [isFullPara, setIsFullPara] = useState(false);
-   const [isOpenModal, setIsOpenModal] = useState(false);
+   const [value, toggleValue] = useToggle(false);
 
-   if (!movieInfor) return <Loading />;
-
-   // Format show times and description
+   // Format show times
    const { day, month, year } = formatDate(movieInfor.ngayKhoiChieu);
-   const shortDesc = movieInfor.moTa.substring(0, movieInfor.moTa.length - 60);
 
    // Open Modal Video
    const handleClickTrailer = () => {
-      setIsOpenModal(!isOpenModal);
+      toggleValue(!value);
    };
 
    return (
@@ -42,30 +41,10 @@ const Poster = ({ movieInfor }) => {
                            className={styles.btnTrailer}
                            onClick={handleClickTrailer}
                         >
-                           <svg
-                              viewBox="0 0 48 48"
-                              xmlns="http://www.w3.org/2000/svg"
-                           >
-                              <g fill="none" fillRule="evenodd">
-                                 <circle
-                                    stroke="#FFF"
-                                    strokeWidth="2"
-                                    fillOpacity=".24"
-                                    fill="#000"
-                                    cx="24"
-                                    cy="24"
-                                    r="23"
-                                 ></circle>
-                                 <path
-                                    d="M34.667 24.335c0 .515-.529.885-.529.885l-14.84 9.133c-1.08.704-1.965.182-1.965-1.153V15.467c0-1.338.884-1.856 1.968-1.153L34.14 23.45c-.002 0 .527.37.527.885Z"
-                                    fill="#FFF"
-                                    fillRule="nonzero"
-                                 ></path>
-                              </g>
-                           </svg>
+                           <ButtonPlay />
                         </div>
                         <ModalVideo
-                           isOpen={isOpenModal}
+                           isOpen={value}
                            onClose={handleClickTrailer}
                            url={movieInfor.trailer}
                            desc={movieInfor.moTa}
@@ -74,20 +53,17 @@ const Poster = ({ movieInfor }) => {
                      </div>
                   </div>
                   <div className={styles.movieDescription}>
-                     <div className={styles.ageLimit}>13+</div>
+                     <div
+                        className={cn("ageLimit", { under18: !movieInfor.hot })}
+                     >
+                        {movieInfor.hot ? "18+" : "16+"}
+                     </div>
                      <h1>{movieInfor.tenPhim}</h1>
                      <h3>Nội dung</h3>
-                     <div
-                        className={cn({
-                           [styles.text]: true,
-                           [styles.showMore]: true,
-                        })}
-                     >
-                        {isFullPara ? movieInfor.moTa : shortDesc}
-                        <span onClick={() => setIsFullPara(!isFullPara)}>
-                           {isFullPara ? "Thu gọn" : "...Xem thêm"}
-                        </span>
-                     </div>
+                     <Paragraph
+                        maxCharacters={200}
+                        paragraph={movieInfor.moTa}
+                     />
                      <div className={styles.anotherDescription}>
                         <div className={styles.date}>
                            <p>Ngày chiếu</p>

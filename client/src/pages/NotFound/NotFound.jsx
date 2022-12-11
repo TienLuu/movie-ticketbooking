@@ -1,6 +1,5 @@
 // Import Library's Hook
 import { Link } from "react-router-dom";
-import Loading from "../../layouts/Loading";
 
 // Import Module Css
 import styles from "./styles.module.scss";
@@ -25,8 +24,6 @@ const NotFound = () => {
                   <button>Home</button>
                </Link>
             </div>
-
-            <Loading />
          </div>
       </section>
    );

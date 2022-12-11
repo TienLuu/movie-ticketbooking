@@ -1,8 +1,8 @@
 .movieClusters {
    position: sticky;
    top: 0;
-   border-bottom: 1px solid rgb(229, 229, 229);
+   border-bottom: 1px solid var(--clr-border1);
    padding: 0.75rem 0 0.5rem;
-   background-color: rgb(255, 255, 255);
+   background-color: var(--clr-white);
    z-index: 30;
 }

@@ -1,11 +1,12 @@
 // Import Library's Hook
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Import API Config
+// Import Services
 import authAPI from "../services/authAPI";
+import localService from "../services/localService";
 
 const initialState = {
-   user: JSON.parse(localStorage.getItem("user")) || null,
+   user: localService.user.get() || null,
    loading: false,
    error: null,
 };
@@ -14,7 +15,8 @@ const initialState = {
 export const signin = createAsyncThunk("author/signin", async (values) => {
    try {
       const data = await authAPI.signin(values);
-      localStorage.setItem("user", JSON.stringify(data));
+      localService.user.set(data);
+      console.log(data);
 
       return data;
    } catch (error) {
@@ -27,11 +29,8 @@ const authSlice = createSlice({
    initialState,
    reducers: {
       logout: (state, action) => {
-         localStorage.removeItem("user");
+         localService.user.remove();
          return { ...state, user: null };
-      },
-      resetState: (state, action) => {
-         return { ...state, error: null };
       },
    },
 

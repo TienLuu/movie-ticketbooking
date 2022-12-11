@@ -3,8 +3,12 @@ import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 
+// Import Custom Hook
+import useRequest from "../../hooks/useRequest";
+
 // Import Components
 import MovieTheater from "./MovieTheater";
+import Empty from "../Empty";
 
 // Import API Config
 import cinemaAPI from "../../services/cinemaAPI";
@@ -15,22 +19,23 @@ import styles from "./styles.module.scss";
 const MovieTheaters = ({ onSelect, initialCinemaCluster }) => {
    const [cinemaClusters, setCinemaClusters] = useState([]);
    const [activeId, setActiveId] = useState();
+   const getCinemaClusters = useRequest(cinemaAPI.getCinemaClusters, {
+      manual: true,
+   });
 
    useEffect(() => {
-      (async () => {
-         try {
-            // Get movie theater list
-            const cinemaClusters = await cinemaAPI.getCinemaClusters();
-
+      getCinemaClusters
+         .runAsync()
+         .then((data) => {
             // Set cinema cluster is active at position 0
-            initialCinemaCluster(cinemaClusters[0].maHeThongRap);
+            initialCinemaCluster(data[0].maHeThongRap);
 
             // Update cinema cluster list
-            setCinemaClusters(cinemaClusters);
-         } catch (error) {
+            setCinemaClusters(data);
+         })
+         .catch((error) => {
             console.log(error);
-         }
-      })();
+         });
    }, []);
 
    const handleSelect = (cinemaClusterId) => {
@@ -40,6 +45,10 @@ const MovieTheaters = ({ onSelect, initialCinemaCluster }) => {
       // Set cinema cluster is selected
       setActiveId(cinemaClusterId);
    };
+
+   if (!getCinemaClusters.data) {
+      return <Empty />;
+   }
 
    return (
       <div className={styles.movieClusters}>

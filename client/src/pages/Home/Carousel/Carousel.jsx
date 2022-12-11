@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 
+// Import Components
+import Empty from "../../../layouts/Empty";
+
+// Import Custom Hook
+import useRequest from "../../../hooks/useRequest";
+
 // Import Services
 import movieAPI from "../../../services/movieAPI";
 
@@ -12,17 +18,22 @@ import styles from "./styles.module.scss";
 
 const Carousel = () => {
    const [banners, setBanners] = useState([]);
+   const getBanners = useRequest(movieAPI.getBanners, { manual: true });
 
    useEffect(() => {
-      (async () => {
-         try {
-            const data = await movieAPI.getBanner();
+      getBanners
+         .runAsync()
+         .then((data) => {
             setBanners(data);
-         } catch (error) {
+         })
+         .catch((error) => {
             console.log(error);
-         }
-      })();
+         });
    }, []);
+
+   if (!getBanners.data) {
+      return <Empty />;
+   }
 
    return (
       <section className={styles.carousel}>

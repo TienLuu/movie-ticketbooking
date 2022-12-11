@@ -10,7 +10,7 @@
    height: 200px;
    display: inline-block;
    overflow: hidden;
-   background: #ffffff;
+   background: var(--clr-white);
 }
 
 .dualRing {
@@ -19,7 +19,7 @@
    position: relative;
    transform: translateZ(0) scale(1);
    backface-visibility: hidden;
-   transform-origin: 0 0; /* see note above */
+   transform-origin: 0 0;
 
    div {
       box-sizing: border-box !important;
@@ -32,8 +32,9 @@
       top: 28px;
       left: 28px;
       border-radius: 50%;
-      border: 16px solid #000;
-      border-color: #ff6600 transparent #ff6600 transparent;
+      border: 16px solid var(--clr-black);
+      border-color: var(--clr-primary) transparent var(--clr-primary)
+         transparent;
       animation: dualRing 1s linear infinite;
 
       &:nth-child(2) {
@@ -54,15 +55,15 @@
                height: 16px;
                top: -16px;
                left: 48px;
-               background: #ff6600;
+               background: var(--clr-primary);
                border-radius: 50%;
-               box-shadow: 0 128px 0 0 #ff6600;
+               box-shadow: 0 128px 0 0 var(--clr-primary);
             }
 
             &::after {
                left: -16px;
                top: 48px;
-               box-shadow: 128px 0 0 0 #ff6600;
+               box-shadow: 128px 0 0 0 var(--clr-primary);
             }
          }
       }

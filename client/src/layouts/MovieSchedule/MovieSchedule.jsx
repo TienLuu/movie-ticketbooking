@@ -25,20 +25,6 @@ const MovieSchedule = ({ rb, cinemaBranchSelected }) => {
    const [showtimes, setShowtimes] = useState();
 
    useEffect(() => {
-      // for (const item in cinemaBranchSelected?.danhSachPhim) {
-      //    for (const item1 in cinemaBranchSelected?.danhSachPhim[item]
-      //       .lstLichChieuTheoPhim) {
-
-      //    }
-      //    cinemaBranchSelected?.danhSachPhim[item].lstLichChieuTheoPhim.map(
-      //       (item) => {
-      //          return {
-      //             ...item,
-      //             ngayChieuGioChieu: formatDate(item.ngayChieuGioChieu),
-      //          };
-      //       }
-      //    );
-      // }
       if (!cinemaBranchSelected) {
          return;
       }
@@ -65,6 +51,7 @@ const MovieSchedule = ({ rb, cinemaBranchSelected }) => {
    const handleSelect = (movieScheduleId) => {
       setActiveId(movieScheduleId);
    };
+
    return (
       <>
          <div className={styles.movieSchedule}>

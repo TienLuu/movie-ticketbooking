@@ -3,7 +3,6 @@
    margin: 0 auto;
    border-radius: 0.25rem;
 
-   // text-align: center;
    overflow: hidden;
 
    .itemHeading {
@@ -38,22 +37,22 @@
          font-size: 0.75rem;
          font-weight: 600;
          line-height: 1rem;
-         color: rgba(255, 255, 255, 0.95);
+         color: var(--clr-white-dot95);
 
          border-radius: 0.125rem;
          padding: 0 0.5rem;
          align-items: center;
-         background-color: #9b2020;
+         background-color: var(--clr-bg2);
 
          &.under18 {
-            background-color: #e88021;
+            background-color: var(--clr-bg1);
          }
       }
    }
 
    .itemImage {
       height: inherit;
-      background-color: rgb(229, 229, 229);
+      background-color: var(--clr-bg6);
 
       transition: all 0.3s ease;
 
@@ -70,7 +69,7 @@
          h3 {
             font-size: 1rem;
             font-weight: 600;
-            color: #292929;
+            color: var(--clr-title1);
             text-transform: capitalize;
 
             cursor: pointer;
@@ -85,7 +84,7 @@
 
       .itemSubtitle {
          font-size: 0.8125rem;
-         color: rgb(163, 163, 163);
+         color: var(--clr-subtitle);
          line-height: 1.25;
          text-transform: capitalize;
          margin-top: 0.25rem;
@@ -104,7 +103,7 @@
 
    .arrowPrev,
    .arrowNext {
-      color: #ff6600;
+      color: var(--clr-primary);
       cursor: pointer;
 
       svg {

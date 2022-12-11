@@ -39,7 +39,7 @@ const SeatManagement = ({ seats, onSelectSeat, seatsSelected }) => {
          <div className={styles.seatChoice}>
             <h1>CHOOSE SEAT</h1>
             <div className={styles.typeChose}>
-               <span className={styles.seatSelected}>Selected Seat</span>
+               <span className={styles.seatSelect}>Select Seat</span>
                <span className={styles.seatReserved}>Reserved Seat</span>
                <span className={styles.seatNormal}>Normal Seat</span>
                <span className={styles.seatVip}>Vip Seat</span>

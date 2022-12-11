@@ -5,6 +5,7 @@ import { createHashRouter } from "react-router-dom";
 import RootLayout from "../layouts/RootLayout";
 import Home from "../pages/Home";
 import Movie from "../pages/Movie";
+import User from "../pages/User/User";
 import UserProtected from "./UserProtected";
 import Checkout from "../pages/Checkout";
 import Auth from "../pages/Auth";
@@ -22,6 +23,16 @@ const routes = createHashRouter([
 
          // Movie
          { path: "/movie/:movieId", element: <Movie /> },
+
+         // User
+         {
+            path: "/user",
+            element: (
+               <UserProtected>
+                  <User />
+               </UserProtected>
+            ),
+         },
 
          // Checkout
          {

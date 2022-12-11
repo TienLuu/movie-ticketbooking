@@ -1,49 +1,55 @@
-import { useState, useMemo, useEffect } from 'react'
+// Import Library's Hook
+import { useState, useMemo, useEffect } from "react";
 
-const useRequest = (service, options = {
-    manual: false,
-    onSuccess: () => { },
-    onError: () => { },
-    onBefore: () => { },
-}) => {
-    const [status, setStatus] = useState({ loading: false, error: false, data: null })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const isManual = useMemo(() => options.manual, [])
+const useRequest = (
+   service,
+   options = {
+      manual: false,
+      onSuccess: () => {},
+      onError: () => {},
+      onBefore: () => {},
+   }
+) => {
+   const [status, setStatus] = useState({
+      loading: false,
+      error: false,
+      data: null,
+   });
 
-    const runAsync = async (...params) => {
-        setStatus(prev => ({ ...prev, loading: true, error: false }))
-        try {
-            const data = await service(...params)
-            setStatus(prev => ({ ...prev, loading: false, error: false, data }))
-            return Promise.resolve(data)
-        } catch (error) {
-            setStatus(prev => ({ ...prev, loading: false, error }))
-            return Promise.reject(error)
-        }
-    }
+   const isManual = useMemo(() => options.manual, []);
 
-    const run = async (...params) => {
-        options.onBefore(params)
-        setStatus(prev => ({ ...prev, loading: true, error: false }))
+   const runAsync = async (...params) => {
+      setStatus((prev) => ({ ...prev, loading: true, error: false }));
+      try {
+         const data = await service(...params);
+         setStatus((prev) => ({ ...prev, loading: false, error: false, data }));
+         return Promise.resolve(data);
+      } catch (error) {
+         setStatus((prev) => ({ ...prev, loading: false, error }));
+         return Promise.reject(error);
+      }
+   };
 
-        try {
-            const data = await service(...params)
-            setStatus(prev => ({ ...prev, loading: false, error: false, data }))
-            options.onSuccess(data, params)
+   const run = async (...params) => {
+      options.onBefore(params);
+      setStatus((prev) => ({ ...prev, loading: true, error: false }));
 
-        } catch (error) {
-            setStatus(prev => ({ ...prev, loading: false, error }))
-            options.onError(error)
-        }
-    }
+      try {
+         const data = await service(...params);
+         setStatus((prev) => ({ ...prev, loading: false, error: false, data }));
+         options.onSuccess(data, params);
+      } catch (error) {
+         setStatus((prev) => ({ ...prev, loading: false, error }));
+         options.onError(error);
+      }
+   };
 
-    useEffect(() => {
-        if (isManual) return
-        run()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+   useEffect(() => {
+      if (isManual) return;
+      run();
+   }, []);
 
-    return { run, runAsync, ...status }
-}
+   return { run, runAsync, ...status };
+};
 
-export default useRequest
+export default useRequest;

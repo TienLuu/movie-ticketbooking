@@ -4,8 +4,8 @@
 
 .main {
    border-radius: 0.5rem;
-   background-color: #fff;
-   border-color: rgb(229, 229, 229);
+   background-color: var(--clr-white);
+   border-color: var(--clr-border1);
 
    @media (min-width: 768px) {
       border-width: 1px;
@@ -35,7 +35,7 @@
       font-size: 1.6rem;
       font-weight: 700;
       line-height: 2rem;
-      color: #ff6600;
+      color: var(--clr-primary);
    }
 }
 
@@ -62,18 +62,18 @@
    }
 
    &::-webkit-scrollbar-track {
-      background: #f0f0f0;
+      background: var(--clr-scrollbar-track);
    }
 
    /* Handle */
    &::-webkit-scrollbar-thumb {
-      background: #c9c9c9;
+      background: var(--clr-scrollbar-thump);
       border-radius: 0.125rem;
    }
 
    /* Handle on hover */
    &::-webkit-scrollbar-thumb:hover {
-      background: #ff6600;
+      background: var(--clr-primary);
    }
 
    @media (min-width: 767px) {
@@ -84,7 +84,7 @@
    @media (min-width: 768px) {
       margin-left: 0;
       margin-right: 0;
-      border-left: 1px solid rgb(229, 229, 229);
+      border-left: 1px solid var(--clr-border1);
       grid-column: span 2 / span 2;
    }
 }

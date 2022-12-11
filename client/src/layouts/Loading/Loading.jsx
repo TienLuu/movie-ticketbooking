@@ -6,6 +6,7 @@ import styles from "./styles.module.scss";
 
 const Loading = () => {
    useScrollToTop();
+
    return (
       <div className={styles.loading}>
          <div className={styles.loadingDualRing}>

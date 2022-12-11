@@ -29,7 +29,7 @@
 
       border-radius: 0.25rem;
       overflow: hidden;
-      background-color: rgb(229, 229, 229);
+      background-color: var(--clr-bg6);
 
       height: 105px;
 
@@ -59,14 +59,14 @@
             line-height: 1rem;
             font-size: 0.75rem;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.95);
+            color: var(--clr-white-dot95);
 
             transform: scale(0.9);
 
-            background-color: #9b2020;
+            background-color: var(--clr-bg2);
 
             &.under18 {
-               background-color: #e88021;
+               background-color: var(--clr-bg1);
             }
          }
       }
@@ -74,7 +74,7 @@
       .title {
          font-size: 1rem;
          font-weight: 600;
-         color: rgb(38, 38, 38);
+         color: var(--clr-title1);
          line-height: 1.25;
       }
 
@@ -82,7 +82,7 @@
          font-size: 0.8125rem;
          line-height: 1.25;
          margin-top: 0.25rem;
-         color: rgb(163, 163, 163);
+         color: var(--clr-subtitle);
          text-transform: capitalize;
       }
    }

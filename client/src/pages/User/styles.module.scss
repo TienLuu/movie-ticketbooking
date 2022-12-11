@@ -1,0 +1,122 @@
+.user {
+   .main {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 992px) {
+         flex-direction: row;
+      }
+   }
+}
+
+.userInfor {
+   width: 100%;
+   background: var(--clr-bg10);
+   text-align: center;
+   color: var(--clr-text5);
+   padding: 20px;
+
+   @media (min-width: 998px) {
+      width: 150px;
+   }
+
+   .image {
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      margin: 0 auto;
+      background: var(--clr-primary);
+      color: var(--clr-icon);
+      border-radius: 20%;
+      font-size: 100px;
+      font-weight: 500;
+   }
+
+   .name {
+      margin-top: 1.25rem;
+      font-size: 1.875rem;
+      font-weight: 500;
+      color: var(--clr-primary);
+   }
+
+   .type {
+      font-size: 1.25rem;
+      font-weight: 500;
+
+      &.quanTri {
+         color: var(--clr-red);
+      }
+   }
+
+   .amount {
+      color: var(--clr-select);
+   }
+}
+
+.userDetails {
+   overflow: hidden;
+   margin: 1.25rem 1rem;
+
+   @media (min-width: 992px) {
+      width: 100%;
+      margin: 1.25rem 2rem 3rem;
+   }
+}
+
+@media screen and (max-width: 992px) {
+   .userInfor {
+      width: 150px;
+      height: auto;
+
+      .photo {
+         width: 100px;
+         height: 100px;
+         line-height: 100px;
+         font-size: 50px;
+      }
+
+      .name {
+         margin-top: 10px t;
+         font-size: 18px;
+      }
+
+      .type {
+         font-size: 12px;
+         font-weight: 500;
+      }
+   }
+}
+
+@media screen and (min-width: 0) {
+   .userInfor {
+      width: 100%;
+      height: auto;
+      text-align: center;
+      box-shadow: var(--clr-gray) 0px 5px 15px;
+      padding: 20px;
+
+      .photo {
+         width: 50px;
+         height: 50px;
+         line-height: 50px;
+         font-size: 1.25rem;
+      }
+
+      .name {
+         margin-top: 5px;
+         font-size: 1.5rem;
+         font-weight: 500;
+      }
+
+      .bookingInfor {
+         margin-top: 1rem;
+      }
+   }
+}
+
+@media (min-width: 1000px) {
+   .userInfor {
+      width: 300px;
+   }
+}

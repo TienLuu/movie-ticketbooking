@@ -18,6 +18,7 @@ const CinemaList = ({
    return (
       <>
          <div className={styles.cinemaList}>
+            {/* UnderDevelopment - Search cinema branch */}
             <div className={styles.inputSearch}>
                <input type="text" placeholder="Tìm tên theo rạp ..." />
             </div>

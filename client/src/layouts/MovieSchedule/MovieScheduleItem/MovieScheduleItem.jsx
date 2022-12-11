@@ -1,16 +1,17 @@
 // Import Library's Component
-import cn from "classnames";
+import classnames from "classnames/bind";
 
 // Import Module Css
 import styles from "./styles.module.scss";
+
+const cn = classnames.bind(styles);
 
 const MovieShceduleItem = ({ day, isActive, setActive }) => {
    return (
       <>
          <div
-            className={cn({
-               [styles.movieScheduleItem]: true,
-               [styles.active]: isActive,
+            className={cn("movieScheduleItem", {
+               active: isActive,
             })}
             onClick={() => setActive(day.dd)}
          >
