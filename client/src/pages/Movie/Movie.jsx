@@ -1,19 +1,12 @@
-// Import Library's Hook
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-// Import Components
 import Poster from "./Poster";
 import ShowTimes from "./ShowTimes";
 import Loading from "../../layouts/Loading";
-
-// Import Custom Hook
 import useRequest from "../../hooks/useRequest";
 
-// Import Services
 import cinemaAPI from "../../services/cinemaAPI";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Movie = () => {

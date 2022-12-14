@@ -8,13 +8,9 @@ import swal from "sweetalert";
 // Import Custom Hook
 import useRequest from "../../../hooks/useRequest";
 
-// Import Components
 import TextField from "../../../components/TextField";
 
-// Import Services
 import authAPI from "../../../services/authAPI";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Signup = () => {
@@ -96,6 +92,7 @@ const Signup = () => {
                      error={errors.taiKhoan && errors.taiKhoan.message}
                   />
                   <TextField
+                     type="password"
                      placeholder="Password"
                      {...register("matKhau", {
                         required: {

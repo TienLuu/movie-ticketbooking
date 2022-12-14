@@ -1,7 +1,4 @@
-// Import Library's Hooks
 import { Outlet } from "react-router-dom";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Auth = () => {

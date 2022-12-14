@@ -1,12 +1,9 @@
-// Import Library's Hook
 import { useState, useEffect } from "react";
 
-// Import Components
 import MovieTheaters from "../../../layouts/MovieTheaters";
 import CinemaSelect from "../CinemaSelect";
 import Empty from "../../../layouts/Empty/Empty";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const ShowTimes = ({ movieShowTimes }) => {

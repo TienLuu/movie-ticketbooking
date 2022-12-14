@@ -7,6 +7,9 @@ import SeatManagement from "./SeatManagement";
 import Ticket from "./Ticket";
 import Loading from "../../layouts/Loading";
 
+// Import Custom Hook
+import useRequest from "../../hooks/useRequest";
+
 // Import Services
 import ticketBookingAPI from "../../services/ticketBookingAPI";
 
@@ -18,6 +21,9 @@ const Checkout = () => {
    const [movieInfor, setMovieInfor] = useState();
    const [seats, setSeats] = useState();
    const [seatsSelected, setSeatsSelected] = useState([]);
+   const getTicketRoom = useRequest(ticketBookingAPI.getTicketRoom, {
+      manual: true,
+   });
 
    const handleSelectSeat = (seatId) => {
       // Find seat is selected
@@ -44,17 +50,15 @@ const Checkout = () => {
 
    // Get seat list and movie information
    useEffect(() => {
-      (async () => {
-         try {
-            const { danhSachGhe, thongTinPhim } =
-               await ticketBookingAPI.getTicketRoom(checkoutId);
-
-            setSeats(danhSachGhe);
-            setMovieInfor(thongTinPhim);
-         } catch (error) {
+      getTicketRoom
+         .runAsync(checkoutId)
+         .then((data) => {
+            setSeats(data.danhSachGhe);
+            setMovieInfor(data.thongTinPhim);
+         })
+         .catch((error) => {
             console.log(error);
-         }
-      })();
+         });
    }, [checkoutId]);
 
    if (!seats) {

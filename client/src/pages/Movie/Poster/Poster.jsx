@@ -1,18 +1,11 @@
-// Import Library's Component
 import classnames from "classnames/bind";
 
-// Import Custom Hook
 import useToggle from "../../../hooks/useToggle";
-
-// Import Components
 import ModalVideo from "../../../layouts/ModalVideo";
 import Paragraph from "../../../components/Paragraph";
 import { ButtonPlay } from "../../../components/SVG";
 
-// Import Services
 import formatDate from "../../../utils/formatDate";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const cn = classnames.bind(styles);

@@ -1,19 +1,12 @@
-// Import Library's Hook
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-// Import Library's Component
 import classnames from "classnames/bind";
 
-// Import Components
 import UserInfor from "./UserInfor";
 import Booking from "./Booking";
 import Loading from "../../layouts/Loading";
 
-// Import Services
 import { getUserInfor } from "../../slices/userSlice";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const cn = classnames.bind(styles);
@@ -29,7 +22,6 @@ const User = () => {
    if (!user) {
       return <Loading />;
    }
-   console.log(user);
 
    const { thongTinDatVe, taiKhoan, hoTen, maLoaiNguoiDung, loaiNguoiDung } =
       user;
@@ -47,7 +39,7 @@ const User = () => {
                </p>
                <p className={styles.name}>{hoTen}</p>
                <p
-                  className={cn("users-type", {
+                  className={cn("type", {
                      quanTri: maLoaiNguoiDung === "QuanTri",
                   })}
                >

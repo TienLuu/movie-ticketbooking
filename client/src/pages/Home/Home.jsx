@@ -1,4 +1,3 @@
-// Import Components
 import Carousel from "./Carousel";
 import FilmList from "./FilmList";
 import TicketBooking from "./TicketBooking";

@@ -1,7 +1,5 @@
-// Import Library's Hook
 import { Link } from "react-router-dom";
-
-// Import Module Css
+import CardSkeleton from "../../components/CardSkeleton";
 import styles from "./styles.module.scss";
 
 const NotFound = () => {
@@ -24,6 +22,7 @@ const NotFound = () => {
                   <button>Home</button>
                </Link>
             </div>
+            <CardSkeleton />
          </div>
       </section>
    );

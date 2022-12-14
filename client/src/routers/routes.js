@@ -1,17 +1,18 @@
-// Import Library's Hook
+import { lazy } from "react";
 import { createHashRouter } from "react-router-dom";
 
-// Import Components
 import RootLayout from "../layouts/RootLayout";
-import Home from "../pages/Home";
-import Movie from "../pages/Movie";
-import User from "../pages/User/User";
 import UserProtected from "./UserProtected";
-import Checkout from "../pages/Checkout";
-import Auth from "../pages/Auth";
+
 import Signin from "../pages/Auth/Signin";
 import Signup from "../pages/Auth/Signup";
 import NotFound from "../pages/NotFound";
+
+const Home = lazy(() => import("../pages/Home"));
+const Movie = lazy(() => import("../pages/Movie"));
+const User = lazy(() => import("../pages/User/User"));
+const Checkout = lazy(() => import("../pages/Checkout"));
+const Auth = lazy(() => import("../pages/Auth"));
 
 const routes = createHashRouter([
    {

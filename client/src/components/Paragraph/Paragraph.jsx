@@ -1,10 +1,5 @@
-// Import Library's Hook
-import { useState } from "react";
-
-// Import Custom Hook
 import useToggle from "../../hooks/useToggle";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Paragraph = ({ paragraph, maxCharacters }) => {

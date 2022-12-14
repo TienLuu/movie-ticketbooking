@@ -4,11 +4,26 @@ import { useNavigate } from "react-router-dom";
 // Import Library's Component
 import swal from "sweetalert";
 
+// Import Custom Hook
+import useRequest from "../../../hooks/useRequest";
+
+// Import Services
+import ticketBookingAPI from "../../../services/ticketBookingAPI";
+
 // Import Module Css
 import styles from "./styles.module.scss";
 
 const Ticket = ({ movieInfor, seatsSelected }) => {
    const navigate = useNavigate();
+   const bookingTicket = useRequest(ticketBookingAPI.bookingTicket, {
+      manual: true,
+   });
+   const bookingInfor = {
+      maLichChieu: movieInfor.maLichChieu,
+      danhSachVe: seatsSelected.map((item) => {
+         return { maGhe: item.maGhe, giaVe: item.giaVe };
+      }),
+   };
 
    // Check the list of seats selected before purchase
    const handlePurchase = () => {
@@ -16,9 +31,15 @@ const Ticket = ({ movieInfor, seatsSelected }) => {
          swal("Please choose your seat before payment!", "", "warning");
          return;
       }
-      swal("Payment Success!", "You clicked the button!", "success").then(() =>
-         navigate("/")
-      );
+      bookingTicket.runAsync(bookingInfor).then(() => {
+         swal({
+            title: "Payment Success!",
+            text: "Redirecting...",
+            icon: "success",
+            timer: 3000,
+            buttons: false,
+         }).then(() => navigate("/"));
+      });
    };
 
    return (

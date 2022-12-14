@@ -1,12 +1,16 @@
 import fetcher from "./fetcher";
 
 const ticketBookingAPI = {
-   getTicketRoom: async (showTimesId) => {
-      return await fetcher.get("QuanLyDatVe/LayDanhSachPhongVe", {
+   getTicketRoom: (showTimesId) => {
+      return fetcher.get("QuanLyDatVe/LayDanhSachPhongVe", {
          params: {
             MaLichChieu: showTimesId,
          },
       });
+   },
+
+   bookingTicket: (inforTicket) => {
+      return fetcher.post("/QuanLyDatVe/DatVe", inforTicket);
    },
 };
 

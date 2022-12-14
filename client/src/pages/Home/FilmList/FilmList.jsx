@@ -38,9 +38,6 @@ const FilmList = () => {
       (movie) => movie.dangChieu === false && movie.sapChieu === true
    );
 
-   if (!getMovies.data) {
-      return <Empty />;
-   }
    return (
       <>
          <section className={styles.filmList}>

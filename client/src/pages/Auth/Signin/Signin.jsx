@@ -1,18 +1,11 @@
-// Import Library's Hook
 import { useForm } from "react-hook-form";
 import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
-// Import Library's Component
 import swal from "sweetalert";
 
-// Import Components
 import TextField from "../../../components/TextField";
 
-// Import slice
 import { signin } from "../../../slices/authSlice";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Signin = () => {

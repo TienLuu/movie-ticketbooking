@@ -1,4 +1,3 @@
-// Import Library's Component
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,10 +7,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import dayjs from "dayjs";
 
-// Import Components
 import Empty from "../../../layouts/Empty";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Booking = ({ user }) => {

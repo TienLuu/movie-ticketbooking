@@ -6,8 +6,10 @@ import { Navigation } from "swiper";
 // Import Components
 import MovieScheduleItem from "./MovieScheduleItem";
 
-// Import Module Css
+// Import Utils
 import formatDate from "../../utils/formatDate";
+
+// Import Module Css
 import styles from "./styles.module.scss";
 
 const days = [

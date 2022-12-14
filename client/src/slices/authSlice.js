@@ -1,7 +1,5 @@
-// Import Library's Hook
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Import Services
 import authAPI from "../services/authAPI";
 import localService from "../services/localService";
 
@@ -16,7 +14,6 @@ export const signin = createAsyncThunk("author/signin", async (values) => {
    try {
       const data = await authAPI.signin(values);
       localService.user.set(data);
-      console.log(data);
 
       return data;
    } catch (error) {

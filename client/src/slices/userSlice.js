@@ -1,7 +1,4 @@
-// Import Library's Hook
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-// Import Services
 import userAPI from "../services/userAPI";
 
 const initialState = {

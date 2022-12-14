@@ -1,11 +1,8 @@
-// Import Library's Component
 import MenuItem from "@mui/material/MenuItem";
 
-// Import Components
 import InputSelect from "../../../components/InputSelect";
 import ButtonSVG from "../../../components/ButtonSVG";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const TicketBookingInput = ({ movies, movieDetails }) => {

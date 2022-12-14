@@ -1,14 +1,9 @@
-// Import Library's Component
 import classnames from "classnames/bind";
 
-// Import Components
 import InputSelectCinema from "../../../layouts/InputSelectCinema";
 import ShowtimesList from "../../../layouts/ShowtimesList";
 
-// Import Services
 import formatDate from "../../../utils/formatDate";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const cn = classnames.bind(styles);

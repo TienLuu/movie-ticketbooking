@@ -1,23 +1,13 @@
-// Import Library's Hook
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useForm, Controller } from "react-hook-form";
-
-// Import Library's Component
 import swal from "sweetalert";
 
-// Import Custom Hook
 import useRequest from "../../../hooks/useRequest";
-
-// Import Components
 import TextField from "../../../components/TextField";
 
-// Import Services
 import userAPI from "../../../services/userAPI";
-
-// Import Slice
 import { getUserInfor } from "../../../slices/userSlice";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const UserInfor = ({ user }) => {
@@ -26,14 +16,25 @@ const UserInfor = ({ user }) => {
       manual: true,
    });
 
-   const { control, handleSubmit } = useForm({
+   useEffect(() => {
+      reset({
+         taiKhoan: user?.taiKhoan,
+         matKhau: user?.matKhau,
+         email: user?.email,
+         soDt: user?.soDT,
+         hoTen: user?.hoTen,
+         maLoaiNguoiDung: user?.maLoaiNguoiDung,
+      });
+   }, [user]);
+
+   const { reset, control, handleSubmit } = useForm({
       defaultValues: {
-         taiKhoan: user.taiKhoan,
-         matKhau: user.matKhau,
-         email: user.email,
-         soDt: user.soDT,
-         hoTen: user.hoTen,
-         maLoaiNguoiDung: user.maLoaiNguoiDung,
+         taiKhoan: "",
+         matKhau: "",
+         email: "",
+         soDt: "",
+         hoTen: "",
+         maLoaiNguoiDung: "",
       },
       mode: "onTouched",
    });
@@ -43,14 +44,10 @@ const UserInfor = ({ user }) => {
          .runAsync(values)
          .then(async () => {
             await dispatch(getUserInfor()).unwrap();
-            await swal(
-               "Cập Nhật Thành Công!",
-               "You clicked the 'OK'!",
-               "success"
-            );
+            await swal("Update successful", "You clicked the 'OK'!", "success");
          })
          .catch((error) => {
-            swal("Cập nhật thất bại!", `${error}`, "warning");
+            swal("Update failed", `${error}`, "warning");
          });
    };
 

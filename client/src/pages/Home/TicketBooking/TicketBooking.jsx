@@ -16,12 +16,8 @@ import Modal from "../../../components/Modal";
 // Import Services
 import cinemaAPI from "../../../services/cinemaAPI";
 
-// Import Util
 import formatDate from "../../../utils/formatDate";
-
-// Import Module Css
 import styles from "./styles.module.scss";
-import Empty from "../../../layouts/Empty/Empty";
 
 const TicketBooking = () => {
    const [cinemaClusterId, setCinemaClusterId] = useState();
@@ -109,10 +105,6 @@ const TicketBooking = () => {
    const handleSelectCinemaCluster = (cinemaClusterId) => {
       setCinemaClusterId(cinemaClusterId);
    };
-
-   if (!getCinemaShowtimes.data) {
-      return <Empty />;
-   }
 
    return (
       <section className={styles.ticketBooking}>
