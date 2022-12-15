@@ -1,7 +1,4 @@
-// Import Library's Component
 import axios from "axios";
-
-// Import Services
 import localService from "./localService";
 
 const fetcher = axios.create({

@@ -1,21 +1,14 @@
-// Import Library's Hook
 import { useEffect } from "react";
 import { Link, useLocation, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-
-// Import Library's Component
 import RotateRightIcon from "@mui/icons-material/RotateRight";
 
-// Import Components
 import { Logo } from "../../components/SVG";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
 
-// Import Services
 import { signin } from "../../slices/authSlice";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Login = () => {

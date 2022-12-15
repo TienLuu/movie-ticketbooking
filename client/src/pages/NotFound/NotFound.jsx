@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import CardSkeleton from "../../components/CardSkeleton";
 import styles from "./styles.module.scss";
 

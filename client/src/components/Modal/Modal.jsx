@@ -1,10 +1,6 @@
-// Import Library's Component
 import cn from "classnames";
 
-// Import Custom Hook
 import useBodyScroll from "../../hooks/useBodyScroll";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Modal = ({ title, isOpen, onClose, children }) => {

@@ -2,14 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
-// Import Library's Hook
 import { Provider } from "react-redux";
 
-// Import Store Redux
 import store from "./store";
 
-// Import CSS
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/pagination";

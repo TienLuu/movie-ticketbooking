@@ -1,5 +1,4 @@
 import Skeleton from "@mui/material/Skeleton";
-
 import styles from "./styles.module.scss";
 
 const CardSkeleton = () => {

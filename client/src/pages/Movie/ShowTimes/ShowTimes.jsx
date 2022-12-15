@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import MovieTheaters from "../../../layouts/MovieTheaters";
+import MovieTheaters from "../../../layouts/components/MovieTheaters";
 import CinemaSelect from "../CinemaSelect";
-import Empty from "../../../layouts/Empty/Empty";
+import Empty from "../../../components/Empty";
 
 import styles from "./styles.module.scss";
 
@@ -40,7 +40,7 @@ const ShowTimes = ({ movieShowTimes }) => {
 
    // Update cinema branch is selected
    const handleSelectCinemaBranch = (cinemaBranchId) => {
-      const cinemaBranch = cinemaShowtimes[0].lstCumRap.find(
+      const cinemaBranch = cinemaShowtimes[0].cumRapChieu.find(
          (item) => item.maCumRap === cinemaBranchId
       );
       setCinemaBranchSelected(cinemaBranch);

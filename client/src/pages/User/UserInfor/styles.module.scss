@@ -37,11 +37,11 @@
       border-radius: 0.2rem;
       margin-top: 1rem;
       transition: all 0.3s ease;
+      opacity: 0.8;
       cursor: pointer;
 
       &:hover {
-         background-color: var(--clr-red);
-         color: var(--clr-black);
+         opacity: 1;
       }
    }
 }

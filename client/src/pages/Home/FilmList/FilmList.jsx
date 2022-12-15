@@ -1,17 +1,9 @@
-// Import Library's Hook
 import { useEffect, useState } from "react";
 
-// Import Custom Hook
 import useRequest from "../../../hooks/useRequest";
-
-// Import Components
 import FilmSlide from "./FilmSilde/FilmSlide";
-import Empty from "../../../layouts/Empty";
 
-// Import API Config
 import movieAPI from "../../../services/movieAPI";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const FilmList = () => {

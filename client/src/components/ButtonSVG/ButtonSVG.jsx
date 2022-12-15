@@ -1,11 +1,8 @@
-// Import Library's Hook
 import * as React from "react";
 import ButtonUnstyled, {
    buttonUnstyledClasses,
 } from "@mui/base/ButtonUnstyled";
 import { styled } from "@mui/system";
-
-// Import Library's Component
 import PropTypes from "prop-types";
 
 const ButtonRoot = React.forwardRef(function ButtonRoot(props, ref) {

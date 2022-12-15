@@ -1,19 +1,11 @@
-// Import Library's Hook
 import { Link } from "react-router-dom";
-
-// Import Library's Component
 import classNames from "classnames/bind";
 
-// Import Components
 import TreeView from "../../../components/TreeView";
-
-// Import Hooks
 import useToggle from "../../../hooks/useToggle";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 import sidebarConfig from "./sidebar-config";
-
 const cn = classNames.bind(styles);
 
 const Sidebar = () => {

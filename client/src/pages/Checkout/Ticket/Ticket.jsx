@@ -1,16 +1,9 @@
-// Import Library's Hook
 import { useNavigate } from "react-router-dom";
-
-// Import Library's Component
 import swal from "sweetalert";
 
-// Import Custom Hook
 import useRequest from "../../../hooks/useRequest";
 
-// Import Services
 import ticketBookingAPI from "../../../services/ticketBookingAPI";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Ticket = ({ movieInfor, seatsSelected }) => {
@@ -36,7 +29,7 @@ const Ticket = ({ movieInfor, seatsSelected }) => {
             title: "Payment Success!",
             text: "Redirecting...",
             icon: "success",
-            timer: 3000,
+            timer: 2000,
             buttons: false,
          }).then(() => navigate("/"));
       });

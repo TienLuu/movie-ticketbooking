@@ -1,4 +1,3 @@
-// Import Library's Hook
 import { useEffect } from "react";
 
 const useBodyScroll = (isDeactivate) => {

@@ -1,7 +1,4 @@
-// Import Components
 import SeatItem from "../SeatItem";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const SeatManagement = ({ seats, onSelectSeat, seatsSelected }) => {

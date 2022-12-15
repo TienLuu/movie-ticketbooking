@@ -1,30 +1,19 @@
-// Import Library's Hook
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
-
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Components
 import Button from "../../../components/Button";
 import Modal from "../../../components/Modal";
 import TextField from "../../../components/TextField";
 import StyledSelect from "../../../components/Select";
-
-// Import Custom Hook
 import useRequest from "../../../hooks/useRequest";
 
-// Import Services
 import ticketAPI from "../../../services/ticketAPI";
 import theaterAPI from "../../../services/theaterAPI";
-
-// Import Slice
 import { getMovieDetail } from "../../../slices/movieSlice";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const MovieScheduleFormModal = ({ open = false, onClose }) => {

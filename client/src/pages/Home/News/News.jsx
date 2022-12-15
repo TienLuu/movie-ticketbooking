@@ -1,9 +1,7 @@
-// Import Library's Component
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import ForumIcon from "@mui/icons-material/Forum";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const News = () => {

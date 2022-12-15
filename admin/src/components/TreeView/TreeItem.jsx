@@ -1,13 +1,14 @@
-import PropTypes from "prop-types";
 import { useState } from "react";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Link, useHref } from "react-router-dom";
+import PropTypes from "prop-types";
 import classnames from "classnames/bind";
-
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Collapse from "@mui/material/Collapse";
-import styles from "./Tree.module.scss";
+
 import TreeView from "./TreeView";
-const cx = classnames.bind(styles);
+
+import styles from "./styles.module.scss";
+const cn = classnames.bind(styles);
 
 const TreeItem = ({ node }) => {
    const href = useHref();
@@ -17,7 +18,7 @@ const TreeItem = ({ node }) => {
    let Component = "li";
    const { props = {} } = node;
 
-   let componentClass = cx("item", {
+   let componentClass = cn("item", {
       root: node.root,
       expanded: isExpanded,
       separate: node.separate,
@@ -31,11 +32,11 @@ const TreeItem = ({ node }) => {
 
    return (
       <Component {...props} className={componentClass}>
-         <div className={cx("title")} onClick={() => setExpanded(!isExpanded)}>
-            {node.icon && <div className={cx("iconView")}>{node.icon}</div>}
+         <div className={cn("title")} onClick={() => setExpanded(!isExpanded)}>
+            {node.icon && <div className={cn("iconView")}>{node.icon}</div>}
             <span>{node.title}</span>
             {hasChild && (
-               <div className={cx("iconToggle")}>
+               <div className={cn("iconToggle")}>
                   <KeyboardArrowDownIcon fontSize="inherit" color="inherit" />
                </div>
             )}

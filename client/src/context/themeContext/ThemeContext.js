@@ -1,7 +1,4 @@
-// Import Library's Hook
 import { createContext, useState } from "react";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const ThemeContext = createContext();

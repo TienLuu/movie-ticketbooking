@@ -1,8 +1,9 @@
-import PropTypes from "prop-types";
 import { forwardRef } from "react";
-import styles from "./TextField.module.scss";
+import PropTypes from "prop-types";
 import classNames from "classnames/bind";
-const cx = classNames.bind(styles);
+
+import styles from "./styles.module.scss";
+const cn = classNames.bind(styles);
 
 const TextField = forwardRef(
    ({ type = "text", label, onChange, className, error, ...passProp }, ref) => {
@@ -14,7 +15,7 @@ const TextField = forwardRef(
       }
 
       return (
-         <div className={cx("wrapper", { [className]: className })}>
+         <div className={cn("wrapper", { [className]: className })}>
             <Component
                className={styles.input}
                type={type}

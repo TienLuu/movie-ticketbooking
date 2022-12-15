@@ -1,25 +1,16 @@
-// Import Library's Hook
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
-
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Components
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 import StyledSelect from "../../components/Select/CustomSelect";
-
-// Import Custom Hook
 import useRequest from "../../hooks/useRequest";
 
-// Import Services
 import movieAPI from "../../services/movieAPI";
-
-// Import Module Css
-import styles from "./styles.module.scss";
 import cameraImg from "../../assets/images/camera.png";
+import styles from "./styles.module.scss";
 
 const MovieNew = () => {
    const [previewImage, setPreviewImage] = useState("");

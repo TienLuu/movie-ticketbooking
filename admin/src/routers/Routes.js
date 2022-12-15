@@ -1,7 +1,5 @@
-// Import Library's Hook
 import { Routes, Route } from "react-router-dom";
 
-// Import Components
 import DefaultLayout from "../layouts/RootLayout";
 import Entry from "../pages/Entry";
 import Home from "../pages/Home";

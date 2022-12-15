@@ -1,7 +1,5 @@
-// Import Library's Hook
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Import Services
 import movieAPI from "../services/movieAPI";
 import theaterAPI from "../services/theaterAPI";
 

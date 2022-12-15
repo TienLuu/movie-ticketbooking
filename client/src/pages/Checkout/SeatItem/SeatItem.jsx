@@ -1,10 +1,6 @@
-// Import Library's Hook
 import { useState } from "react";
-
-// Import Library's Component
 import classnames from "classnames/bind";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const cn = classnames.bind(styles);

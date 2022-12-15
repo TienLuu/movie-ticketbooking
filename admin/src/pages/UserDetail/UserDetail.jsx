@@ -1,24 +1,18 @@
-// Import Library's Hook
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Components
 import Box from "../../components/Box";
 import TableData from "../../components/TableData";
 import Button from "../../components/Button";
 import CustomLoadingOverlay from "../../components/TableData/CustomLoadingOverlay";
 import CustomErrorOverLay from "../../components/TableData/CustomErrorOverLay";
-import avatarDefault from "../../assets/images/avatar-default.png";
 
 import { getUserInfo, deleteUser } from "../../slices/userSlice";
 import UserEditFormModal from "./UserEditFormModal";
-
-// Import Module Css
+import avatarDefault from "../../assets/images/avatar-default.png";
 import styles from "./styles.module.scss";
 
 const UserDetail = () => {

@@ -1,27 +1,20 @@
-// Import Library's Hook
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
-
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Components
 import Button from "../../../components/Button";
 import Modal from "../../../components/Modal";
 import TextField from "../../../components/TextField";
 import StyledSelect from "../../../components/Select";
 
-// Import API Config
 import { getUserInfo } from "../../../slices/userSlice";
 import useRequest from "../../../hooks/useRequest";
 import userAPI from "../../../services/userAPI";
-
-// Import Module Css
-import styles from "./UserEditFormModal.module.scss";
 import avatarDefault from "../../../assets/images/avatar-default.png";
+import styles from "./styles.module.scss";
 
 const UserEditFormModal = ({ open, onClose }) => {
    const { id } = useParams();

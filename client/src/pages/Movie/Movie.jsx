@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Poster from "./Poster";
 import ShowTimes from "./ShowTimes";
-import Loading from "../../layouts/Loading";
+import Loading from "../../layouts/components/Loading";
 import useRequest from "../../hooks/useRequest";
 
 import cinemaAPI from "../../services/cinemaAPI";

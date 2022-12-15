@@ -1,24 +1,15 @@
-// Import Library's Hook
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Components
 import { Logo } from "../../components/SVG";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
-
-// Import Custom Hook
 import useRequest from "../../hooks/useRequest";
 
-// Import Services
 import authAPI from "../../services/authAPI";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Register = () => {

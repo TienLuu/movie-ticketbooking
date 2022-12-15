@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-
-import styles from "./Box.module.scss";
 import classNames from "classnames/bind";
 
+import styles from "./styles.module.scss";
 const cn = classNames.bind(styles);
 
 const Box = ({ children, className, ...passProp }) => {

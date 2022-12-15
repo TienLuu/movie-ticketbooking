@@ -1,10 +1,6 @@
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Custom Hook
 import useTimer from "../../hooks/useTimer";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const UnderDevelopment = () => {

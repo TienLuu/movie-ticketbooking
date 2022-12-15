@@ -1,7 +1,7 @@
 import classnames from "classnames/bind";
 
-import InputSelectCinema from "../../../layouts/InputSelectCinema";
-import ShowtimesList from "../../../layouts/ShowtimesList";
+import InputSelectCinema from "../../../layouts/components/InputSelectCinema";
+import ShowtimesList from "../../../layouts/components/ShowtimesList";
 
 import formatDate from "../../../utils/formatDate";
 import styles from "./styles.module.scss";

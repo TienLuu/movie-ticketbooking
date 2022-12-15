@@ -1,4 +1,3 @@
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Home = () => {

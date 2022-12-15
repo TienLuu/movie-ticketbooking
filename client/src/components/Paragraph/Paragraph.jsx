@@ -1,5 +1,4 @@
 import useToggle from "../../hooks/useToggle";
-
 import styles from "./styles.module.scss";
 
 const Paragraph = ({ paragraph, maxCharacters }) => {

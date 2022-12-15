@@ -1,10 +1,6 @@
-// Import Library's Hook
 import { forwardRef } from "react";
-
-// Import Library's Component
 import PropTypes from "prop-types";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const TextField = forwardRef(

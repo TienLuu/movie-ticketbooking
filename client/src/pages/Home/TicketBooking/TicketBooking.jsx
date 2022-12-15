@@ -1,21 +1,16 @@
-// Import Library's Hook
 import { useState, useEffect } from "react";
 
-// Import Custom Hook
 import useRequest from "../../../hooks/useRequest";
 import useToggle from "../../../hooks/useToggle";
 import useWindowSize from "../../../hooks/useWindowSize";
 
-// Import Components
-import Movietheaters from "../../../layouts/MovieTheaters";
-import InputSelectCinema from "../../../layouts/InputSelectCinema";
-import CinemaList from "../../../layouts/CinemaList";
-import MovieList from "../../../layouts/MovieList";
+import Movietheaters from "../../../layouts/components/MovieTheaters";
+import InputSelectCinema from "../../../layouts/components/InputSelectCinema";
+import CinemaList from "../../../layouts/components/CinemaList";
+import MovieList from "../../../layouts/components/MovieList";
 import Modal from "../../../components/Modal";
 
-// Import Services
 import cinemaAPI from "../../../services/cinemaAPI";
-
 import formatDate from "../../../utils/formatDate";
 import styles from "./styles.module.scss";
 

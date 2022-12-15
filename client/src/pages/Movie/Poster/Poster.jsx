@@ -1,7 +1,7 @@
 import classnames from "classnames/bind";
 
 import useToggle from "../../../hooks/useToggle";
-import ModalVideo from "../../../layouts/ModalVideo";
+import ModalVideo from "../../../layouts/components/ModalVideo";
 import Paragraph from "../../../components/Paragraph";
 import { ButtonPlay } from "../../../components/SVG";
 

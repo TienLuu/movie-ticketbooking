@@ -1,4 +1,3 @@
-// Import Library's Hook
 import { useEffect, useState } from "react";
 
 const useWindowSize = (delay) => {

@@ -4,7 +4,7 @@ import classnames from "classnames/bind";
 
 import UserInfor from "./UserInfor";
 import Booking from "./Booking";
-import Loading from "../../layouts/Loading";
+import Loading from "../../layouts/components/Loading";
 
 import { getUserInfor } from "../../slices/userSlice";
 import styles from "./styles.module.scss";
@@ -47,13 +47,7 @@ const User = () => {
                </p>
                <div className={styles.bookingInfor}>
                   <p>
-                     Số lần đặt vé:{" "}
-                     <strong className={styles.amount}>
-                        {thongTinDatVe.length}
-                     </strong>
-                  </p>
-                  <p>
-                     Số vé đã đặt:{" "}
+                     Amount of ticket booking:{" "}
                      <strong className={styles.amount}>{ticketsNum}</strong>
                   </p>
                </div>

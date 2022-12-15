@@ -1,6 +1,4 @@
 import fetcher from "./fetcher";
-
-// Import Serivces
 import localService from "./localService";
 
 const userAPI = {

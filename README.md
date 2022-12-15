@@ -1,7 +1,7 @@
 ### **Project**
 
 -  1 Movie Ticket Booking
--  1 Admin Dashboard
+-  1 Admin
 
 ### **Link**
 

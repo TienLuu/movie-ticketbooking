@@ -1,15 +1,10 @@
-// Import Library's Hook
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-// Import Components
 import MoreMenu from "../../../../components/MoreMenu";
 import Button from "../../../../components/Button";
 
-// Import Slice
 import { logout } from "../../../../slices/authSlice";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const AccountMenu = () => {

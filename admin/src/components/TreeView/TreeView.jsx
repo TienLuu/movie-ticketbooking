@@ -1,27 +1,26 @@
-import PropTypes from 'prop-types';
-import { memo } from 'react'
-import classnames from 'classnames/bind'
-import styles from './Tree.module.scss'
+import { memo } from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames/bind";
 
-import TreeItem from './TreeItem'
-const cx = classnames.bind(styles)
+import TreeItem from "./TreeItem";
+import styles from "./styles.module.scss";
+const cn = classnames.bind(styles);
 
 const TreeView = ({ data = [], visible = true, children }) => {
-
-    return (
-        <ul className={cx("list", { visible })} >
-            {data.map((node, index) => (
-                <TreeItem node={node} key={index} />
-            ))}
-            {children}
-        </ul>
-    )
-}
+   return (
+      <ul className={cn("list", { visible })}>
+         {data.map((node, index) => (
+            <TreeItem node={node} key={index} />
+         ))}
+         {children}
+      </ul>
+   );
+};
 
 TreeView.propTypes = {
-    data: PropTypes.array.isRequired,
-    children: PropTypes.node,
-    visible: PropTypes.bool
-}
+   data: PropTypes.array.isRequired,
+   children: PropTypes.node,
+   visible: PropTypes.bool,
+};
 
-export default memo(TreeView)
+export default memo(TreeView);

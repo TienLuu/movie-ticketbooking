@@ -1,17 +1,11 @@
-// Import Library's Hook
 import { useContext } from "react";
-
-// Import Library's Component
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import classname from "classnames/bind";
 
-// Import Context
 import themeContext from "../../../../context/themeContext";
 
-// Import Module Css
 import styles from "./styles.module.scss";
-
 const cn = classname.bind(styles);
 
 const ThemeToggle = () => {

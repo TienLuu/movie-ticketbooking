@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { createHashRouter } from "react-router-dom";
 
-import RootLayout from "../layouts/RootLayout";
+import RootLayout from "../layouts";
 import UserProtected from "./UserProtected";
 
 import Signin from "../pages/Auth/Signin";

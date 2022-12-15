@@ -1,12 +1,9 @@
-// Import Library's Hook
 import { Outlet } from "react-router-dom";
 
-// Import Components
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const DefaultLayout = () => {

@@ -1,7 +1,4 @@
-// Import Components
 import Button from "../../components/Button";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Entry = () => {

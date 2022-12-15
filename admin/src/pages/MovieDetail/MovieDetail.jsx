@@ -1,13 +1,9 @@
-// Import Library's Hook
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
-
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Components
 import Box from "../../components/Box";
 import Button from "../../components/Button";
 import TableData from "../../components/TableData";
@@ -17,10 +13,7 @@ import Paragraph from "../../components/Paragraph";
 import MovieEditFormModal from "./MovieEditFormModal";
 import MovieScheduleFormModal from "./MovieScheduleFormModal";
 
-// Import Slice
 import { getMovieDetail, deleteMovie } from "../../slices/movieSlice";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const MovieDetail = () => {

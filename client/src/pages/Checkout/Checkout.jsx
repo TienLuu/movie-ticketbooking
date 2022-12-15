@@ -1,19 +1,12 @@
-// Import Library's Hook
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-// Import Components
 import SeatManagement from "./SeatManagement";
 import Ticket from "./Ticket";
-import Loading from "../../layouts/Loading";
-
-// Import Custom Hook
+import Loading from "../../layouts/components/Loading";
 import useRequest from "../../hooks/useRequest";
 
-// Import Services
 import ticketBookingAPI from "../../services/ticketBookingAPI";
-
-// Import Module Css
 import styles from "./styles.module.scss";
 
 const Checkout = () => {

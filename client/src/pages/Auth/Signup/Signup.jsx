@@ -1,13 +1,8 @@
-// Import Library's Hook
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
-// Import Library's Component
 import swal from "sweetalert";
 
-// Import Custom Hook
 import useRequest from "../../../hooks/useRequest";
-
 import TextField from "../../../components/TextField";
 
 import authAPI from "../../../services/authAPI";

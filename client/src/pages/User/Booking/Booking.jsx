@@ -7,7 +7,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import dayjs from "dayjs";
 
-import Empty from "../../../layouts/Empty";
+import Empty from "../../../components/Empty";
 import styles from "./styles.module.scss";
 
 const Booking = ({ user }) => {
@@ -23,16 +23,16 @@ const Booking = ({ user }) => {
                >
                   <TableHead>
                      <TableRow>
-                        <TableCell>STT</TableCell>
-                        <TableCell align="center">Tên Phim</TableCell>
-                        <TableCell align="center">Thời lượng phim</TableCell>
-                        <TableCell align="center">Tên rạp</TableCell>
-                        <TableCell align="center">Ngày đặt</TableCell>
-                        <TableCell align="center">Mã vé</TableCell>
-                        <TableCell align="center">Tên ghế</TableCell>
+                        <TableCell align="center">Order</TableCell>
+                        <TableCell align="center">Movie</TableCell>
+                        <TableCell align="center">Duration</TableCell>
+                        <TableCell align="center">Room</TableCell>
+                        <TableCell align="center">Booking date</TableCell>
+                        <TableCell align="center">Code</TableCell>
+                        <TableCell align="center">Seats</TableCell>
                      </TableRow>
                   </TableHead>
-                  <TableBody sx={{ minHeight: 300, height: "100%" }}>
+                  <TableBody sx={{ height: "100%" }}>
                      {user?.thongTinDatVe ? (
                         user?.thongTinDatVe.map((row, index) => (
                            <TableRow

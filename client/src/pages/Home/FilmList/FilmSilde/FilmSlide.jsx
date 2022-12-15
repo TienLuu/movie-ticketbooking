@@ -1,15 +1,12 @@
-// Import Library's Hooks
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-
-// Import Library's Components
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import classnames from "classnames/bind";
 
-// Import Module Css
-import styles from "./styles.module.scss";
 import CardSkeleton from "../../../../components/CardSkeleton";
+
+import styles from "./styles.module.scss";
 
 const cn = classnames.bind(styles);
 

@@ -1,7 +1,5 @@
-// Import Library's Hook
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Import Services
 import authAPI from "../services/authAPI";
 import localService from "../services/localService";
 

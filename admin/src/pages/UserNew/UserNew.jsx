@@ -1,22 +1,15 @@
-// Import Library's Hook
 import { useForm, Controller } from "react-hook-form";
 import { toast } from "react-toastify";
-
-// Import Library's Component
 import Grid from "@mui/material/Unstable_Grid2";
 
-// Import Components
 import StyledSelect from "../../components/Select/CustomSelect";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 
-// Import Services
 import userAPI from "../../services/userAPI";
 import useRequest from "../../hooks/useRequest";
-
-// Import Module Css
-import styles from "./UserNew.module.scss";
 import cameraImg from "../../assets/images/camera.png";
+import styles from "./styles.module.scss";
 
 const UserNew = () => {
    const createUser = useRequest(userAPI.createUser, { manual: true });
