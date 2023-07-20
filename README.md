@@ -11,5 +11,5 @@
 
 ### **Account(admin) for testing**
 
--  Username: tienluuadmin
--  Password: tienluuadmin@1301
+-  Username: v0923fvna82
+-  Password: Pa$$w0rd!
